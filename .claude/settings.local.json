@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\css\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\js\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\pages\")",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(Test-Path \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\pages\\\\about.html\"; \\(Get-Item \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\pages\\\\about.html\"\\).Length)",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -Filter '*.html' | Select-Object FullName\")"
+    ]
+  }
+}

@@ -1,0 +1,1358 @@
+/* ============================================================
+   Faiza Khan Portfolio — straysafe.css
+   StraySafe case study page styles
+   ============================================================ */
+
+
+/* ============================================================
+   BACK NAV
+   ============================================================ */
+
+.cs-back-nav {
+  padding: 20px 0 0;
+}
+
+.cs-back-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-faint);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.cs-back-link:hover {
+  color: var(--olive);
+}
+
+
+/* ============================================================
+   HERO — full-bleed dark olive header
+   ============================================================ */
+
+.cs-hero {
+  background: var(--spine);
+  margin: 16px -52px 0 calc(-1 * var(--content-pl));
+  padding: 44px var(--content-pl) 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ruled-line texture inside hero */
+.cs-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 31px,
+    rgba(255, 255, 255, 0.03) 32px
+  );
+  pointer-events: none;
+}
+
+.cs-hero-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-type-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-type-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.45);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  padding: 4px 10px;
+}
+
+/* Published badge — yellow sticky note in hero */
+.cs-published-badge {
+  position: relative;
+  background: var(--sticky-yellow);
+  padding: 10px 12px 13px;
+  font-family: 'Caveat', cursive;
+  color: var(--ink-soft);
+  transform: rotate(1.5deg);
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs-published-badge-title {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cs-published-badge-sub {
+  font-size: 11.5px;
+  font-weight: 400;
+  line-height: 1.3;
+  opacity: 0.78;
+}
+
+.cs-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: -0.01em;
+  max-width: 680px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.9s ease-out 0.1s forwards;
+}
+
+.cs-meta-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.cs-meta-item {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.04em;
+}
+
+.cs-meta-item::before {
+  content: '· ';
+  opacity: 0.4;
+}
+
+.cs-meta-item:first-child::before {
+  content: '';
+}
+
+/* Stats row */
+.cs-stats {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.cs-stat {
+  padding: 0 28px 0 0;
+  margin-right: 28px;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.cs-stat:last-child {
+  border-right: none;
+}
+
+.cs-stat-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.cs-stat-label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgba(255, 255, 255, 0.36);
+}
+
+/* Key insight — torn paper fragment in hero */
+.cs-key-insight {
+  position: relative;
+  background: var(--sticky-white);
+  padding: 16px 20px 18px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.58;
+  color: var(--ink);
+  max-width: 480px;
+  transform: rotate(-0.5deg);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.30);
+  z-index: 2;
+}
+
+.cs-key-insight::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: var(--sticky-white);
+  clip-path: polygon(
+    0% 100%, 2% 30%, 4% 80%, 7% 20%, 10% 75%,
+    13% 25%, 16% 85%, 19% 15%, 22% 70%, 25% 35%,
+    28% 90%, 31% 10%, 34% 65%, 37% 30%, 40% 80%,
+    43% 20%, 46% 60%, 49% 40%, 52% 85%, 55% 15%,
+    58% 70%, 61% 30%, 64% 80%, 67% 20%, 70% 65%,
+    73% 35%, 76% 90%, 79% 10%, 82% 70%, 85% 30%,
+    88% 80%, 91% 15%, 94% 65%, 97% 35%, 100% 55%,
+    100% 100%
+  );
+}
+
+
+/* ============================================================
+   TWO-COLUMN WRAPPER
+   ============================================================ */
+
+.cs-wrapper {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0 32px;
+  align-items: start;
+  padding-top: 56px;
+  margin-left: -60px;
+}
+
+/* Sidebar column stretches full content height */
+.cs-sidebar {
+  align-self: stretch;
+  position: relative;
+  background: rgba(90, 110, 72, 0.05);
+  border-radius: 2px;
+}
+
+/* Faint thread continues below last pin to bottom of column */
+.cs-sidebar::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 38px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(100, 85, 55, 0.35) 0%,
+    rgba(100, 85, 55, 0.18) 40%,
+    rgba(100, 85, 55, 0.05) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Sticky inner — keeps nav visible as you scroll */
+.cs-sidebar-sticky {
+  position: sticky;
+  top: 88px;
+  height: calc(100vh - 88px - 48px);
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-sidebar-sticky .cs-nav {
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* ============================================================
+   SIDEBAR — red thread + pins
+   ============================================================ */
+
+/* "research thread ↓" label */
+.cs-nav-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* The nav container — dashed red thread runs through it */
+.cs-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* thread line lives on .cs-sidebar::before now */
+
+
+/* Each nav item */
+.cs-nav-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 6px 9px 0;
+  text-decoration: none;
+  position: relative;
+  transition: background 0.2s ease;
+  border-radius: 2px;
+}
+
+/* Olive left accent bar on active */
+.cs-nav-link::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--olive);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 1px;
+}
+
+.cs-nav-link.active::before {
+  opacity: 1;
+}
+
+/* Warm background on active */
+.cs-nav-link.active {
+  background: linear-gradient(
+    to right,
+    rgba(90, 110, 72, 0.09),
+    transparent 90%
+  );
+}
+
+/* ── PIN CIRCLE ── */
+.cs-pin {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.22s ease;
+
+  /* FUTURE state: faint outline, hollow */
+  border: 1.5px solid rgba(100, 85, 55, 0.35);
+  background: var(--paper);
+}
+
+/* PAST state: dim filled — shows you've been there */
+.cs-nav-link.past .cs-pin {
+  background: rgba(100, 85, 55, 0.35);
+  border-color: transparent;
+  width: 7px;
+  height: 7px;
+  margin-top: 5px;
+  margin-left: 1px;
+}
+
+/* ACTIVE state: bright filled pin with glow */
+.cs-nav-link.active .cs-pin {
+  background: var(--olive);
+  border-color: var(--olive);
+  box-shadow: 0 0 0 3px rgba(90, 110, 72, 0.14);
+  width: 11px;
+  height: 11px;
+  margin-top: 3px;
+  margin-left: -1px;
+}
+
+/* ── STACKED NUMBER + NAME ── */
+.cs-nav-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.cs-nav-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  transition: color 0.2s ease;
+
+  /* FUTURE: very muted */
+  color: rgba(30, 26, 18, 0.20);
+}
+
+.cs-nav-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.25;
+  transition: color 0.2s ease, font-size 0.2s ease;
+
+  /* FUTURE: muted */
+  color: rgba(30, 26, 18, 0.32);
+}
+
+/* PAST: slightly surfaced — you've read this */
+.cs-nav-link.past .cs-nav-num {
+  color: rgba(90, 110, 72, 0.55);
+}
+
+.cs-nav-link.past .cs-nav-name {
+  color: rgba(30, 26, 18, 0.50);
+}
+
+/* ACTIVE: full presence */
+.cs-nav-link.active .cs-nav-num {
+  color: var(--olive);
+}
+
+.cs-nav-link.active .cs-nav-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.cs-nav-link:hover:not(.active) .cs-nav-name {
+  color: var(--ink-mid);
+}
+
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+
+.cs-main {
+  min-width: 0;
+}
+
+.cs-tldr {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding: 20px 24px;
+  background: rgba(90, 110, 72, 0.06);
+  border-left: 2px solid var(--olive);
+  margin-bottom: 48px;
+}
+
+.cs-tldr-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.cs-tldr-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+}
+
+.cs-section {
+  padding: 0 0 64px;
+  border-bottom: 0.5px solid rgba(100, 85, 55, 0.10);
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.cs-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.cs-section-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.cs-subsection-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.cs-body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.82;
+  color: var(--ink-mid);
+  margin-bottom: 16px;
+}
+
+.cs-body em {
+  font-style: italic;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.cs-body strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cs-list {
+  list-style: none;
+  margin: 12px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-list li {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  padding-left: 18px;
+  position: relative;
+}
+
+.cs-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--olive);
+  font-size: 12px;
+  top: 3px;
+}
+
+/* Stakeholder group callout */
+.cs-group-block {
+  background: var(--paper-warm);
+  border-left: 2px solid var(--olive-pale);
+  padding: 16px 18px;
+  margin: 12px 0 16px;
+}
+
+.cs-group-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--olive);
+  margin-bottom: 6px;
+}
+
+.cs-group-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13.5px;
+  line-height: 1.70;
+  color: var(--ink-mid);
+}
+
+/* Context comparison visual */
+.cs-context-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0;
+  margin: 16px 0 4px;
+}
+
+.cs-context-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 20px 22px;
+}
+
+.cs-context-panel--light {
+  background: var(--paper-warm);
+  border: 0.5px solid rgba(100, 85, 55, 0.14);
+}
+
+.cs-context-panel--dark {
+  background: var(--spine);
+}
+
+.cs-context-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.cs-context-panel--light .cs-context-label {
+  color: var(--ink-faint);
+}
+
+.cs-context-panel--dark .cs-context-label {
+  color: var(--spine-text);
+}
+
+.cs-context-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cs-context-panel--light .cs-context-num {
+  color: var(--ink);
+}
+
+.cs-context-panel--dark .cs-context-num {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.cs-context-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.cs-context-panel--light .cs-context-sub {
+  color: var(--ink-mid);
+}
+
+.cs-context-panel--dark .cs-context-sub {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.cs-context-rule {
+  border: none;
+  border-top: 0.5px solid;
+  margin: 2px 0;
+}
+
+.cs-context-panel--light .cs-context-rule {
+  border-color: rgba(100, 85, 55, 0.18);
+}
+
+.cs-context-panel--dark .cs-context-rule {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.cs-context-detail {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.cs-context-panel--light .cs-context-detail {
+  color: var(--ink-muted);
+}
+
+.cs-context-panel--dark .cs-context-detail {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.cs-context-vs {
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-faint);
+  padding: 0 12px;
+  text-align: center;
+}
+
+.cs-context-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--red-thread);
+  text-align: center;
+  margin: 6px 0 20px;
+  opacity: 0.80;
+}
+
+/* NGO list tags */
+.cs-ngo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+
+.cs-ngo-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--ink-mid);
+  border: 0.5px solid rgba(100, 85, 55, 0.22);
+  padding: 4px 10px;
+  background: var(--paper-warm);
+}
+
+/* Bodystorming moment — special callout */
+.bodystorm-callout {
+  position: relative;
+  background: var(--terra-pale);
+  border-left: 3px solid var(--terra);
+  padding: 24px 24px 24px 28px;
+  margin: 32px 0;
+}
+
+.bodystorm-callout::before {
+  content: 'The Unplanned Test';
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--terra);
+  margin-bottom: 12px;
+}
+
+.bodystorm-callout .cs-body {
+  margin-bottom: 10px;
+}
+
+.bodystorm-callout .cs-body:last-child {
+  margin-bottom: 0;
+}
+
+.bodystorm-callout .cs-list li::before {
+  color: var(--terra);
+}
+
+
+.bodystorm-callout-footer {
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--terra);
+  margin-top: 12px;
+  opacity: 0.80;
+}
+
+/* Central theoretical question */
+.cs-theory-block {
+  background: var(--spine);
+  padding: 28px 32px;
+  margin: 28px 0;
+}
+
+.cs-theory-block p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.58;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cs-theory-block .cs-body {
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   KEY INSIGHTS — 2x2 sticky grid
+   ============================================================ */
+
+/* ── Insights accordion ── */
+.insights-accordion {
+  margin-top: 24px;
+  border-top: 0.5px solid rgba(100, 85, 55, 0.14);
+}
+
+.ia-row {
+  border-bottom: 0.5px solid rgba(100, 85, 55, 0.14);
+}
+
+.ia-trigger {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.18s ease;
+}
+
+.ia-trigger:hover {
+  background: rgba(90, 110, 72, 0.03);
+}
+
+.ia-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.ia-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  flex: 1;
+}
+
+.ia-icon {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--olive);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: transform 0.22s ease;
+  margin-left: 8px;
+}
+
+.ia-trigger[aria-expanded="true"] .ia-icon {
+  transform: rotate(45deg);
+}
+
+.ia-detail {
+  padding: 0 4px 24px 36px;
+}
+
+.ia-detail[hidden] {
+  display: none;
+}
+
+.ia-detail-body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.78;
+  color: var(--ink-mid);
+  margin-bottom: 16px;
+}
+
+.ia-response {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  padding: 16px 20px;
+  background: rgba(90, 110, 72, 0.06);
+  border-left: 2px solid var(--olive);
+}
+
+.ia-response-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+  white-space: nowrap;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.ia-response-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+}
+
+
+/* ============================================================
+   SIX SERVICE LEVELS
+   ============================================================ */
+
+.service-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.level-card {
+  position: relative;
+  background: var(--paper-warm);
+  border: 0.5px solid rgba(100, 85, 55, 0.14);
+  overflow: hidden;
+  transition: box-shadow 0.22s ease;
+}
+
+.level-card:hover {
+  box-shadow: var(--sh-m);
+}
+
+.level-accent {
+  height: 4px;
+  width: 100%;
+}
+
+.level-body {
+  padding: 18px 18px 22px;
+  cursor: pointer;
+}
+
+.level-num {
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.level-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.level-gap {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.level-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.70;
+  color: var(--ink-mid);
+}
+
+
+/* ============================================================
+   IMPACT SECTION
+   ============================================================ */
+
+.cs-impact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(90, 110, 72, 0.08);
+  border: 0.5px solid rgba(90, 110, 72, 0.28);
+  padding: 10px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--olive);
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+
+.cs-impact-badge::before {
+  content: '★';
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   IMPACT — split layout
+   ============================================================ */
+
+.cs-impact-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.cs-impact-img-col {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.cs-impact-img-col .cs-artifact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   REFLECTION — two columns
+   ============================================================ */
+
+.reflection-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.reflection-col {
+  background: var(--paper-warm);
+  padding: 22px 20px 26px;
+  border-top: 2.5px solid var(--olive-pale);
+  position: relative;
+}
+
+.reflection-col::before {
+  content: attr(data-label);
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+}
+
+.reflection-col .cs-body {
+  font-size: 13.5px;
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   FOOTER CTA
+   ============================================================ */
+
+.cs-footer-cta {
+  padding: 48px 0 56px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-top: 0.5px solid rgba(100, 85, 55, 0.12);
+  flex-wrap: wrap;
+}
+
+.cs-footer-cta-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+.cs-paper-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--spine);
+  color: rgba(255, 255, 255, 0.88);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 13px 28px;
+  text-decoration: none;
+  transition: background 0.22s ease;
+}
+
+.cs-paper-btn:hover {
+  background: var(--olive);
+}
+
+.cs-paper-btn-note {
+  font-family: 'Caveat', cursive;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+
+/* ── Next project bar ── */
+/* Testing + Wireframes subsections */
+.cs-testing-block {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 0.5px solid rgba(100, 85, 55, 0.10);
+}
+
+.cs-testing-block::before {
+  content: 'The Honest Check';
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mustard);
+  margin-bottom: 12px;
+}
+
+.cs-testing-block .ia-response {
+  margin-top: 16px;
+}
+
+.ia-response--caution {
+  background: rgba(192, 72, 56, 0.05);
+  border-left-color: var(--terra);
+}
+
+.ia-response--caution .ia-response-label {
+  color: var(--terra);
+}
+
+.cs-wireframes-block {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 0.5px solid rgba(100, 85, 55, 0.10);
+}
+
+.cs-wireframes-block::before {
+  content: 'From Concept to Interface';
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--olive);
+  margin-bottom: 12px;
+}
+
+.cs-wireframe-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 20px 0 10px;
+}
+
+.cs-wireframe-placeholder {
+  background: var(--paper-warm);
+  border: 0.5px solid rgba(100, 85, 55, 0.18);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: flex-end;
+  padding: 8px;
+}
+
+.cs-wireframe-label {
+  font-family: 'Caveat', cursive;
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+
+.cs-next-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 24px;
+  background: rgba(90, 110, 72, 0.06);
+  border-top: 0.5px solid rgba(100, 85, 55, 0.14);
+  text-decoration: none;
+  margin-top: 48px;
+  margin-bottom: 80px;
+  transition: background 0.2s ease;
+}
+
+.cs-next-project:hover {
+  background: rgba(90, 110, 72, 0.12);
+}
+
+.cs-next-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-next-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--olive);
+}
+
+.cs-next-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.cs-next-arrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 22px;
+  color: var(--olive);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.cs-next-project:hover .cs-next-arrow {
+  transform: translateX(5px);
+}
+
+
+/* ── Research artifact images ── */
+
+.cs-artifact,
+.cs-artifact-2col {
+  background: #f2f1ee;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 20px 0 28px;
+}
+
+.cs-artifact-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: rgba(0,0,0,0.08) 0 2px 12px;
+}
+
+.cs-artifact-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  color: rgba(30,26,18,0.55);
+  text-align: center;
+  margin-top: 8px;
+  display: block;
+}
+
+.cs-artifact-caption--link-hint {
+  font-size: 11px;
+  margin-top: 4px;
+  color: rgba(30,26,18,0.38);
+}
+
+.cs-artifact-link {
+  display: block;
+  cursor: pointer;
+}
+
+.cs-artifact-link .cs-artifact-img {
+  transition: opacity 0.2s ease;
+}
+
+.cs-artifact-link:hover .cs-artifact-img {
+  opacity: 0.82;
+}
+
+.cs-artifact--small .cs-artifact-img {
+  max-width: 480px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Two-column image grid */
+.cs-artifact-2col {
+  margin: 20px 0 28px;
+}
+
+.cs-artifact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cs-artifact-row .cs-artifact-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+
+/* ── Storyboard images within service level cards ── */
+
+.storyboard-toggle {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--olive);
+  background: none;
+  border: 1px solid rgba(90,110,72,0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+
+.level-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.level-desc-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.storyboard-toggle:hover {
+  background: rgba(90,110,72,0.06);
+}
+
+.storyboard-figure {
+  margin-top: 16px;
+}
+
+.storyboard-img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: rgba(0,0,0,0.06) 0 2px 8px;
+}
+
+.storyboard-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 12px;
+  color: rgba(30,26,18,0.50);
+  text-align: center;
+  margin-top: 6px;
+  display: block;
+}
+
+
+/* (progress-thread removed — replaced by .cs-sidebar sticky nav) */

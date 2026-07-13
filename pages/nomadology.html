@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nomadology: Designing a Camping Experience &mdash; case study by Faiza Khan.">
+  <title>Nomadology &mdash; Faiza Khan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/notebook.css">
+  <link rel="stylesheet" href="../css/straysafe.css">
+  <link rel="stylesheet" href="../css/nomadology.css">
+  <link rel="stylesheet" href="../css/chat.css">
+</head>
+
+<body>
+<div class="notebook-wrapper">
+
+  <!-- ═══════════════════════════════════════════
+       LEFT SPINE
+  ═══════════════════════════════════════════ -->
+  <aside class="spine" aria-hidden="true">
+    <span class="spine-text">OBSERVE &mdash; UNDERSTAND &mdash; MAKE SENSE &mdash; DESIGN</span>
+  </aside>
+
+
+  <!-- ═══════════════════════════════════════════
+       MAIN PAGE
+  ═══════════════════════════════════════════ -->
+  <main class="page">
+
+    <!-- ── Navbar ── -->
+    <header class="navbar">
+      <a href="../index.html" class="nav-logo" aria-label="Faiza Khan home">
+        faiza.<span class="nav-logo-dot" aria-hidden="true"></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html#work"  class="nav-link">Work</a>
+        <a href="about.html"          class="nav-link">About</a>
+        <a href="contact.html"        class="nav-link">Contact</a>
+        <span class="nav-end-dot" aria-hidden="true"></span>
+      </nav>
+    </header>
+
+    <div class="page-content">
+
+      <!-- Back nav -->
+      <nav class="cs-back-nav" aria-label="Back to portfolio">
+        <a href="../index.html#work" class="cs-back-link">&larr; Back to all projects</a>
+      </nav>
+
+
+      <!-- ═══════════════════════════════════════════
+           HERO &mdash; forest green full-bleed
+      ═══════════════════════════════════════════ -->
+      <div class="cs-hero" role="banner">
+
+        <!-- Top bar: type tags + team note -->
+        <div class="cs-hero-bar">
+          <div class="cs-type-tags" role="list" aria-label="Project tags">
+            <span class="cs-type-tag" role="listitem">Service Design</span>
+            <span class="cs-type-tag" role="listitem">UX Research</span>
+            <span class="cs-type-tag" role="listitem">Journey Mapping</span>
+            <span class="cs-type-tag" role="listitem">Co-design</span>
+          </div>
+
+          <!-- Team note in Caveat style -->
+          <div class="cs-published-badge" aria-label="Team collaboration">
+            Team of 2 &middot; 2024
+          </div>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="cs-headline">
+          Nomadology: Designing<br>a Camping Experience
+        </h1>
+
+        <!-- Meta row -->
+        <div class="cs-meta-row" aria-label="Project details">
+          <span class="cs-meta-item">2024</span>
+          <span class="cs-meta-item">India</span>
+          <span class="cs-meta-item">Academic Collaborative</span>
+          <span class="cs-meta-item">2 months</span>
+          <span class="cs-meta-item">UX Researcher &amp; Service Designer</span>
+        </div>
+
+        <!-- Stats row -->
+        <div class="cs-stats" aria-label="Project statistics">
+          <div class="cs-stat">
+            <span class="cs-stat-num">4</span>
+            <span class="cs-stat-label">Research Methods</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">2</span>
+            <span class="cs-stat-label">Rounds of Testing</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">1</span>
+            <span class="cs-stat-label">Usability Test</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">7</span>
+            <span class="cs-stat-label">Service Touchpoints</span>
+          </div>
+        </div>
+
+        <!-- Key insight &mdash; yellow sticky note -->
+        <div class="cs-key-insight" role="note" aria-label="Key project insight">
+          <!-- Tape strip -->
+          <div class="tape tape-default"
+               style="position:absolute; top:-9px; left:50%;
+                      transform:translateX(-50%) rotate(1deg);
+                      width:44px; height:15px;"
+               aria-hidden="true"></div>
+          "The brief gave us four problems.<br>
+          The research gave us one."
+        </div>
+
+      </div><!-- .cs-hero -->
+
+
+      <!-- ═══════════════════════════════════════════
+           TWO-COLUMN WRAPPER
+      ═══════════════════════════════════════════ -->
+      <div class="cs-wrapper">
+
+        <!-- ── LEFT SIDEBAR ── -->
+        <aside class="cs-sidebar" aria-label="Case study navigation">
+          <nav class="cs-nav" aria-label="Page sections">
+            <a href="#brief"       class="cs-nav-link">The Brief</a>
+            <a href="#context"     class="cs-nav-link">Context</a>
+            <a href="#research"    class="cs-nav-link">Research</a>
+            <a href="#key-finding" class="cs-nav-link">Key Finding</a>
+            <a href="#insights"    class="cs-nav-link">Insights</a>
+            <a href="#solution"    class="cs-nav-link">The Solution</a>
+            <a href="#testing"     class="cs-nav-link">Testing</a>
+            <a href="#reflection"  class="cs-nav-link">Reflection</a>
+          </nav>
+        </aside>
+
+
+        <!-- ── MAIN CONTENT ── -->
+        <div class="cs-main">
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 1: THE BRIEF
+          ───────────────────────────────────── -->
+          <section class="cs-section" id="brief" aria-labelledby="brief-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">the why &rarr;</span>
+
+            <span class="eyebrow">The Brief</span>
+            <h2 class="cs-section-heading" id="brief-h">Four problems. One question.</h2>
+
+            <p class="cs-body">
+              Design a service for campers that improves their overall experience
+              in terms of safety, accommodation, sanitation, and food.
+            </p>
+
+            <p class="cs-body">
+              Four clear problem areas. But as we moved into research, a different
+              question started to surface:
+            </p>
+
+            <div class="cs-theory-block" style="background: #2a3f30;">
+              <p>
+                "Why do these same problems appear across every campsite,
+                every location, with every provider?"
+              </p>
+              <p class="cs-body">
+                That question shifted the direction of the project entirely.
+              </p>
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 2: CONTEXT + PERSONA
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="context" aria-labelledby="context-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">meet izza &darr;</span>
+
+            <span class="eyebrow">Context</span>
+            <h2 class="cs-section-heading" id="context-h">A growing market with a stagnant experience</h2>
+
+            <!-- Persona block -->
+            <div class="nom-persona" role="figure" aria-label="Primary persona: Izza">
+              <p class="nom-persona-name">Izza</p>
+              <p class="nom-persona-meta">23 &middot; Student &middot; Mumbai</p>
+              <span class="nom-persona-archetype">The Explorer</span>
+              <p class="cs-body" style="margin-bottom: 10px;">
+                She isn't asking for luxury. She wants to experience the rawness of
+                nature with her close ones &mdash; and feel safe and human while doing it.
+              </p>
+              <p class="cs-body" style="margin-bottom: 0;">
+                After every camping trip, three things let her down:
+                dirty washrooms, poor food, and uncomfortable sleep.
+                She isn't asking for a hotel in a forest.
+                She just wants the basics to work.
+              </p>
+            </div>
+
+            <!-- Context stats -->
+            <div class="context-callout" aria-label="Market context">
+              <div class="context-callout-stat">
+                <span class="context-callout-num">6.5%</span>
+                <span class="context-callout-label">CAGR 2021&ndash;25</span>
+              </div>
+              <div class="context-callout-divider" aria-hidden="true"></div>
+              <p class="context-callout-note">
+                Camping is growing rapidly &mdash; urban life is pushing people to
+                seek nature more intentionally. But the on-ground experience
+                hasn't kept up with demand.
+              </p>
+            </div>
+
+            <p class="cs-body">
+              The gap wasn't demand. It was how the experience was being delivered.
+              Safety remains a concern. Hygiene is inconsistent. The equipment
+              market has evolved &mdash; but the service has not.
+            </p>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 3: RESEARCH APPROACH
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="research" aria-labelledby="research-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">&#x21B3; method</span>
+
+            <span class="eyebrow">Research</span>
+            <h2 class="cs-section-heading" id="research-h">Studying both sides of the service</h2>
+
+            <p class="cs-body">
+              We studied how people experience camping, and how camping services
+              actually operate &mdash; deliberately choosing depth over breadth.
+            </p>
+
+            <div class="research-methods" aria-label="Research methods used">
+
+              <div class="research-method reveal" style="transition-delay:0.08s;">
+                <span class="research-method-num">01</span>
+                <h3 class="research-method-title">Interviews &mdash; Campers &amp; Providers</h3>
+                <p class="research-method-desc">
+                  Uncovered the gap between expectations and reality from both
+                  sides of the service. Providers and campers had never been
+                  asked the same questions back to back.
+                </p>
+              </div>
+
+              <div class="research-method reveal" style="transition-delay:0.16s;">
+                <span class="research-method-num">02</span>
+                <h3 class="research-method-title">Focus Groups &mdash; Campers &amp; Non-campers</h3>
+                <p class="research-method-desc">
+                  Surfaced motivations, fears, and the critical difference between
+                  those who camp and those who want to &mdash; but haven't yet taken
+                  that step.
+                </p>
+              </div>
+
+              <div class="research-method reveal" style="transition-delay:0.24s;">
+                <span class="research-method-num">03</span>
+                <h3 class="research-method-title">Photo Journaling &mdash; Real Campsite Conditions</h3>
+                <p class="research-method-desc">
+                  Revealed what interviews couldn't &mdash; not what people said about
+                  camping, but what they valued without articulating. A campfire
+                  with friends. A simple shared meal. A tent opening into a forest.
+                </p>
+              </div>
+
+              <div class="research-method reveal" style="transition-delay:0.32s;">
+                <span class="research-method-num">04</span>
+                <h3 class="research-method-title">Market Scan &mdash; Equipment &amp; Service Landscape</h3>
+                <p class="research-method-desc">
+                  Helped us understand what already existed, and where the service
+                  gap actually began. The equipment market had matured. The service
+                  design had not moved with it.
+                </p>
+              </div>
+
+            </div>
+
+            <p class="cs-body" style="margin-top: 20px;">
+              Photo journaling pointed to something deeper: people weren't chasing
+              comfort. They were chasing <em>rawness and connection</em>.
+              That reframing changed everything that came after.
+            </p>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 4: KEY FINDING + VALUES MISMATCH
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="key-finding" aria-labelledby="key-finding-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">the shift &#x2713;</span>
+
+            <span class="eyebrow">Key Finding</span>
+            <h2 class="cs-section-heading" id="key-finding-h">This is not a feature gap. It is a service delivery problem.</h2>
+
+            <p class="cs-body">
+              At first, the issues seemed disconnected: hygiene, safety, food, access.
+              Clustering brought them together &mdash; and surfaced something unexpected.
+            </p>
+
+            <!-- NOT / BUT pattern -->
+            <div class="findings-list" aria-label="Reframed findings">
+
+              <div class="finding-row">
+                <div class="finding-not">
+                  <span class="finding-label">Assumption</span>
+                  <p class="finding-text">Lack of infrastructure</p>
+                </div>
+                <div class="finding-but">
+                  <span class="finding-label">Reality</span>
+                  <p class="finding-text">Infrastructure exists &mdash; delivery is inconsistent</p>
+                </div>
+              </div>
+
+              <div class="finding-row">
+                <div class="finding-not">
+                  <span class="finding-label">Assumption</span>
+                  <p class="finding-text">Users accept discomfort</p>
+                </div>
+                <div class="finding-but">
+                  <span class="finding-label">Reality</span>
+                  <p class="finding-text">Users accept rawness &mdash; not poor service</p>
+                </div>
+              </div>
+
+              <div class="finding-row">
+                <div class="finding-not">
+                  <span class="finding-label">Assumption</span>
+                  <p class="finding-text">Safety is about availability</p>
+                </div>
+                <div class="finding-but">
+                  <span class="finding-label">Reality</span>
+                  <p class="finding-text">Safety is about visibility</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- The Values Mismatch -->
+            <h3 class="cs-subsection-heading">The Values Mismatch</h3>
+            <p class="cs-body">
+              Providers weren't failing through negligence. They were making deliberate choices &mdash;
+              keeping food basic, limiting comfort, reducing intervention.
+              Because for them, rawness was the product.
+            </p>
+            <p class="cs-body">
+              Campers saw it differently. They were willing to give up luxury &mdash;
+              but not safety or basic dignity.
+            </p>
+
+            <div class="values-mismatch" role="figure" aria-label="Values mismatch between providers and campers">
+
+              <div class="values-col values-col-provider">
+                <span class="values-label">Provider perspective</span>
+                <p class="values-statement">"Rawness is the product."</p>
+                <p class="values-desc">
+                  Minimal comfort is intentional. Reducing intervention preserves
+                  the authentic camping experience they believe they are selling.
+                </p>
+              </div>
+
+              <div class="values-col-divider" aria-hidden="true">
+                <span class="values-vs">vs</span>
+              </div>
+
+              <div class="values-col values-col-camper">
+                <span class="values-label">Camper perspective</span>
+                <p class="values-statement">"Reliability is the minimum."</p>
+                <p class="values-desc">
+                  Happy to give up luxury. Not willing to give up safety or basic
+                  dignity. Rawness is welcome &mdash; neglect is not.
+                </p>
+              </div>
+
+            </div>
+
+            <p class="cs-body">
+              The provider's idea of authenticity was landing in the camper's
+              experience as neglect. Neither side was wrong &mdash;
+              they had different definitions of camping.
+              And <em>nobody had ever made that explicit.</em>
+            </p>
+
+            <!-- Where the experience breaks -->
+            <h3 class="cs-subsection-heading">Where the experience actually breaks</h3>
+
+            <div class="cs-group-block reveal">
+              <p class="cs-group-title">Hygiene</p>
+              <p class="cs-group-desc">
+                Washrooms exist. But no one is clearly responsible for maintaining them.
+                Campers expect providers to manage cleanliness. Providers expect camper
+                participation. The result is predictably inconsistent.
+              </p>
+            </div>
+
+            <div class="cs-group-block reveal">
+              <p class="cs-group-title">Safety</p>
+              <p class="cs-group-desc">
+                Campers don't feel unsafe because of isolation. They feel unsafe because
+                there is nothing to fall back on &mdash; no visible support system, no emergency
+                response structure, no reassurance if something goes wrong.
+              </p>
+            </div>
+
+            <div class="cs-group-block reveal">
+              <p class="cs-group-title">Food</p>
+              <p class="cs-group-desc">
+                Campers ask for local and simple food. Providers interpret that as minimal
+                effort. But campers still expect it to be good. The assumption that
+                "raw = low quality" exists only on the provider side.
+              </p>
+            </div>
+
+            <div class="cs-group-block reveal">
+              <p class="cs-group-title">Accommodation</p>
+              <p class="cs-group-desc">
+                Basic sleeping setups are intentional. But not all discomfort adds to the
+                experience. Campers will endure difficulty &mdash; but not when it feels unnecessary.
+              </p>
+            </div>
+
+            <p class="cs-body" style="margin-top: 8px;">
+              Breakdowns don't happen at touchpoints. They happen in how the experience
+              is interpreted and delivered.
+            </p>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 5: KEY INSIGHTS (5 stickies)
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="insights" aria-labelledby="insights-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">5 things &darr;</span>
+
+            <span class="eyebrow">Insights</span>
+            <h2 class="cs-section-heading" id="insights-h">What the research actually told us</h2>
+
+            <div class="nom-insights-grid" aria-label="Key research insights">
+
+              <!-- Insight 1 &mdash; yellow -->
+              <div class="insight-sticky insight-1" role="note">
+                <div class="tape tape-default"
+                     style="position:absolute; top:-8px; left:50%;
+                            transform:translateX(-50%) rotate(-1.5deg);
+                            width:38px; height:14px;"
+                     aria-hidden="true"></div>
+                <span class="insight-num">insight 01</span>
+                <p class="insight-text">
+                  "The system fails because responsibility is assumed, not defined."
+                </p>
+              </div>
+
+              <!-- Insight 2 &mdash; pink -->
+              <div class="insight-sticky insight-2" role="note">
+                <div class="tape tape-pink"
+                     style="position:absolute; top:-8px; left:50%;
+                            transform:translateX(-50%) rotate(2deg);
+                            width:42px; height:14px;"
+                     aria-hidden="true"></div>
+                <span class="insight-num">insight 02</span>
+                <p class="insight-text">
+                  "Authenticity is being misinterpreted in delivery. Providers remove reliability, not luxury."
+                </p>
+              </div>
+
+              <!-- Insight 3 &mdash; sage -->
+              <div class="insight-sticky insight-3" role="note">
+                <div class="tape tape-green"
+                     style="position:absolute; top:-8px; left:50%;
+                            transform:translateX(-50%) rotate(-1deg);
+                            width:36px; height:14px;"
+                     aria-hidden="true"></div>
+                <span class="insight-num">insight 03</span>
+                <p class="insight-text">
+                  "The experience is shaped by the most basic moments &mdash; washrooms, meals."
+                </p>
+              </div>
+
+              <!-- Insight 4 &mdash; cream -->
+              <div class="insight-sticky insight-4" role="note">
+                <div class="tape tape-default"
+                     style="position:absolute; top:-8px; left:50%;
+                            transform:translateX(-50%) rotate(1.5deg);
+                            width:40px; height:14px;"
+                     aria-hidden="true"></div>
+                <span class="insight-num">insight 04</span>
+                <p class="insight-text">
+                  "Safety is about perception, not presence. Visibility becomes reassurance."
+                </p>
+              </div>
+
+              <!-- Insight 5 &mdash; blue (centred) -->
+              <div class="insight-sticky insight-5" role="note">
+                <div class="tape tape-blue"
+                     style="position:absolute; top:-8px; left:50%;
+                            transform:translateX(-50%) rotate(-0.8deg);
+                            width:44px; height:14px;"
+                     aria-hidden="true"></div>
+                <span class="insight-num">insight 05</span>
+                <p class="insight-text">
+                  "Camping is run as an operation. Not designed as an experience."
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 6: THE SOLUTION
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="solution" aria-labelledby="solution-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">nomadology &#x2713;</span>
+
+            <span class="eyebrow">The Solution</span>
+            <h2 class="cs-section-heading" id="solution-h">Nomadology &mdash; Same Izza. Same campsite. Different experience.</h2>
+
+            <p class="cs-body">
+              Nomadology is a layered service system designed around Izza's journey.
+              Her emotional curve no longer drops. Every previous low point has been
+              replaced by a deliberate, designed touchpoint.
+            </p>
+
+            <!-- Journey map comparison -->
+            <h3 class="cs-subsection-heading">Journey map: before &amp; after</h3>
+
+            <div class="journey-maps-wrap" aria-label="Emotional journey comparison">
+
+              <!-- BEFORE journey map -->
+              <div class="journey-map-card">
+                <span class="journey-map-label">Before Nomadology &mdash; Izza's experience</span>
+                <svg class="journey-map-svg"
+                     viewBox="0 0 540 178"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-label="Before: emotional dips at washrooms and dinner">
+
+                  <!-- Y axis hint -->
+                  <text x="10" y="22" font-family="DM Sans, sans-serif" font-size="8"
+                        fill="rgba(90,110,72,0.55)" text-anchor="middle">+</text>
+                  <text x="10" y="135" font-family="DM Sans, sans-serif" font-size="8"
+                        fill="rgba(184,88,56,0.55)" text-anchor="middle">âˆ’</text>
+
+                  <!-- Neutral baseline -->
+                  <line x1="20" y1="78" x2="522" y2="78"
+                        stroke="rgba(100,85,55,0.12)" stroke-width="0.5" stroke-dasharray="3 2"/>
+
+                  <!-- Dip zone shading (washrooms + dinner) -->
+                  <rect x="248" y="78" width="120" height="56"
+                        fill="rgba(184,88,56,0.06)" rx="0"/>
+
+                  <!-- Main curve &mdash; emotional dips at washrooms (x=280) and dinner (x=360) -->
+                  <path d="M 30 65 C 52 65, 88 54, 110 55
+                           C 132 56, 170 44, 192 45
+                           C 212 46, 242 96, 272 120
+                           C 302 138, 330 114, 352 108
+                           C 374 103, 412 82, 432 82
+                           C 450 82, 494 91, 512 92"
+                        stroke="#b85838" stroke-width="1.8" stroke-linecap="round"/>
+
+                  <!-- Data point dots -->
+                  <circle cx="30"  cy="65"  r="3.5" fill="#b85838"/>
+                  <circle cx="110" cy="55"  r="3.5" fill="#b85838"/>
+                  <circle cx="192" cy="45"  r="3.5" fill="#b85838"/>
+                  <circle cx="272" cy="120" r="3.5" fill="#b85838"/>
+                  <circle cx="352" cy="108" r="3.5" fill="#b85838"/>
+                  <circle cx="432" cy="82"  r="3.5" fill="#b85838"/>
+                  <circle cx="512" cy="92"  r="3.5" fill="#b85838"/>
+
+                  <!-- Dip annotations -->
+                  <text x="272" y="133" font-family="Caveat, cursive" font-size="9"
+                        fill="rgba(184,88,56,0.80)" text-anchor="middle">&darr; washroom</text>
+                  <text x="352" y="122" font-family="Caveat, cursive" font-size="9"
+                        fill="rgba(184,88,56,0.70)" text-anchor="middle">&darr; dinner</text>
+
+                  <!-- Vertical dip lines -->
+                  <line x1="272" y1="78" x2="272" y2="120"
+                        stroke="rgba(184,88,56,0.22)" stroke-width="0.75" stroke-dasharray="2 2"/>
+                  <line x1="352" y1="78" x2="352" y2="108"
+                        stroke="rgba(184,88,56,0.18)" stroke-width="0.75" stroke-dasharray="2 2"/>
+
+                  <!-- Stage labels -->
+                  <text x="30"  y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Pre-camp</text>
+                  <text x="110" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Travelling</text>
+                  <text x="192" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Arriving</text>
+                  <text x="272" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(184,88,56,0.75)" text-anchor="middle">Washrooms</text>
+                  <text x="352" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(184,88,56,0.75)" text-anchor="middle">Dinner</text>
+                  <text x="432" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Night</text>
+                  <text x="512" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Home</text>
+
+                  <!-- Tick marks -->
+                  <line x1="30"  y1="144" x2="30"  y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="110" y1="144" x2="110" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="192" y1="144" x2="192" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="272" y1="144" x2="272" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="352" y1="144" x2="352" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="432" y1="144" x2="432" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="512" y1="144" x2="512" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                </svg>
+              </div>
+
+              <!-- AFTER journey map -->
+              <div class="journey-map-card nom-after">
+                <span class="journey-map-label">After Nomadology &mdash; Izza's experience</span>
+                <svg class="journey-map-svg"
+                     viewBox="0 0 540 178"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-label="After: flat to rising curve, peak at night campfire">
+
+                  <!-- Y axis hint -->
+                  <text x="10" y="22" font-family="DM Sans, sans-serif" font-size="8"
+                        fill="rgba(90,110,72,0.55)" text-anchor="middle">+</text>
+                  <text x="10" y="135" font-family="DM Sans, sans-serif" font-size="8"
+                        fill="rgba(184,88,56,0.55)" text-anchor="middle">âˆ’</text>
+
+                  <!-- Neutral baseline -->
+                  <line x1="20" y1="78" x2="522" y2="78"
+                        stroke="rgba(100,85,55,0.12)" stroke-width="0.5" stroke-dasharray="3 2"/>
+
+                  <!-- Fill under curve -->
+                  <path d="M 30 58 C 52 57, 88 46, 110 46
+                           C 132 46, 170 40, 192 40
+                           C 212 40, 252 52, 272 52
+                           C 292 52, 330 46, 352 46
+                           C 372 46, 412 27, 432 28
+                           C 450 28, 494 42, 512 42
+                           L 512 145 L 30 145 Z"
+                        fill="rgba(42,63,48,0.07)"/>
+
+                  <!-- Main curve &mdash; maintained high, peak at Night -->
+                  <path d="M 30 58 C 52 57, 88 46, 110 46
+                           C 132 46, 170 40, 192 40
+                           C 212 40, 252 52, 272 52
+                           C 292 52, 330 46, 352 46
+                           C 372 46, 412 27, 432 28
+                           C 450 28, 494 42, 512 42"
+                        stroke="#2a3f30" stroke-width="1.8" stroke-linecap="round"/>
+
+                  <!-- Data point dots -->
+                  <circle cx="30"  cy="58" r="3.5" fill="#2a3f30"/>
+                  <circle cx="110" cy="46" r="3.5" fill="#2a3f30"/>
+                  <circle cx="192" cy="40" r="3.5" fill="#2a3f30"/>
+                  <circle cx="272" cy="52" r="3.5" fill="#2a3f30"/>
+                  <circle cx="352" cy="46" r="3.5" fill="#2a3f30"/>
+                  <circle cx="432" cy="28" r="3.5" fill="#2a3f30"/>
+                  <circle cx="512" cy="42" r="3.5" fill="#2a3f30"/>
+
+                  <!-- Peak annotation -->
+                  <text x="432" y="20" font-family="Caveat, cursive" font-size="9"
+                        fill="rgba(42,63,48,0.80)" text-anchor="middle">&uarr; campfire</text>
+
+                  <!-- Maintained annotations -->
+                  <text x="272" y="45" font-family="Caveat, cursive" font-size="8"
+                        fill="rgba(42,63,48,0.65)" text-anchor="middle">maintained &#x2713;</text>
+                  <text x="352" y="39" font-family="Caveat, cursive" font-size="8"
+                        fill="rgba(42,63,48,0.65)" text-anchor="middle">maintained &#x2713;</text>
+
+                  <!-- Stage labels -->
+                  <text x="30"  y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Pre-camp</text>
+                  <text x="110" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Travelling</text>
+                  <text x="192" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Arriving</text>
+                  <text x="272" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(42,63,48,0.65)" text-anchor="middle">Washrooms</text>
+                  <text x="352" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(42,63,48,0.65)" text-anchor="middle">Dinner</text>
+                  <text x="432" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Night</text>
+                  <text x="512" y="160" font-family="DM Sans, sans-serif" font-size="7.5"
+                        fill="rgba(74,68,53,0.60)" text-anchor="middle">Home</text>
+
+                  <!-- Tick marks -->
+                  <line x1="30"  y1="144" x2="30"  y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="110" y1="144" x2="110" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="192" y1="144" x2="192" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="272" y1="144" x2="272" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="352" y1="144" x2="352" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="432" y1="144" x2="432" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                  <line x1="512" y1="144" x2="512" y2="149" stroke="rgba(100,85,55,0.25)" stroke-width="0.5"/>
+                </svg>
+              </div>
+
+            </div><!-- .journey-maps-wrap -->
+
+
+            <!-- Service touchpoints -->
+            <h3 class="cs-subsection-heading">Seven touchpoints. Every one designed.</h3>
+            <p class="cs-body">
+              Each stage of Izza's journey became a deliberate design decision &mdash;
+              not an operational afterthought.
+            </p>
+
+            <div class="touchpoint-cards" aria-label="Service touchpoints">
+
+              <div class="touchpoint-card reveal" style="transition-delay:0.06s;">
+                <div class="touchpoint-card-accent" aria-hidden="true"></div>
+                <span class="touchpoint-card-num">01 &mdash; Pre-camping</span>
+                <h4 class="touchpoint-card-name">Prepared, not anxious</h4>
+                <p class="touchpoint-card-desc">
+                  A preliminary health check at a base location. Allergies and
+                  preferences recorded. A meet-and-greet with fellow campers
+                  before the journey begins. Izza leaves prepared.
+                </p>
+              </div>
+
+              <div class="touchpoint-card reveal" style="transition-delay:0.12s;">
+                <div class="touchpoint-card-accent" aria-hidden="true"></div>
+                <span class="touchpoint-card-num">02 &mdash; Travelling</span>
+                <h4 class="touchpoint-card-name">Travel becomes experience</h4>
+                <p class="touchpoint-card-desc">
+                  A treasure hunt activity guides the group to the campsite.
+                  Refreshment stalls mid-journey. The travel phase is no longer
+                  dead time &mdash; it's the opening act.
+                </p>
+              </div>
+
+              <div class="touchpoint-card reveal" style="transition-delay:0.18s;">
+                <div class="touchpoint-card-accent" aria-hidden="true"></div>
+                <span class="touchpoint-card-num">03 &mdash; Arriving</span>
+                <h4 class="touchpoint-card-name">Oriented and curious</h4>
+                <p class="touchpoint-card-desc">
+                  Photo-booth signboards communicate what's ahead: terrain,
+                  facilities, and activities. Izza is oriented before she's
+                  even seen her tent.
+                </p>
+              </div>
+
+              <div class="touchpoint-card reveal" style="transition-delay:0.24s;">
+                <div class="touchpoint-card-accent" aria-hidden="true"></div>
+                <span class="touchpoint-card-num">04 &mdash; Washrooms</span>
+                <h4 class="touchpoint-card-name">Shared ownership, by design</h4>
+                <p class="touchpoint-card-desc">
+                  Pathway lighting at night. Memes and riddles on walls &mdash;
+                  behaviour design shifting camper ownership through humour,
+                  not instruction. Toiletry kit provided.
+                </p>
+              </div>
+
+              <div class="touchpoint-card reveal" style="transition-delay:0.30s;">
+                <div class="touchpoint-card-accent" aria-hidden="true"></div>
+                <span class="touchpoint-card-num">05 &mdash; Dinner</span>
+                <h4 class="touchpoint-card-name">Agency, not control</h4>
+                <p class="touchpoint-card-desc">
+                  Self-cook stations with condiment counters. Crockery from
+                  natural materials. Izza chooses what she eats and how she
+                  seasons it. The food problem reframed &mdash; by giving agency to Izza.
+                </p>
+              </div>
+
+              <div class="touchpoint-card reveal" style="transition-delay:0.36s;">
+                <div class="touchpoint-card-accent" aria-hidden="true"></div>
+                <span class="touchpoint-card-num">06 &mdash; Night</span>
+                <h4 class="touchpoint-card-name">The serenity she came for</h4>
+                <p class="touchpoint-card-desc">
+                  Campfire mindfulness session &mdash; opt-in, sensory, unhurried.
+                  Stars, hot tea, natural scents. Built deliberately into the
+                  end of the day.
+                </p>
+              </div>
+
+              <!-- 7th card spans full width -->
+              <div class="touchpoint-card reveal" style="transition-delay:0.42s;">
+                <div class="touchpoint-card-accent" aria-hidden="true"></div>
+                <span class="touchpoint-card-num">07 &mdash; Travelling back</span>
+                <h4 class="touchpoint-card-name">Closing the loop</h4>
+                <p class="touchpoint-card-desc">
+                  Feedback form. A cleanliness discount for campers who maintained
+                  their space &mdash; closing the shared ownership loop that had been
+                  entirely absent from the service before.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 7: TESTING
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="testing" aria-labelledby="testing-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">tested &#x2713;</span>
+
+            <span class="eyebrow">Testing</span>
+            <h2 class="cs-section-heading" id="testing-h">Two rounds of physical testing before the prototype</h2>
+
+            <p class="cs-body">
+              We tested the service in the real world before touching any digital
+              prototype. Physical testing surfaced things a wireframe never could.
+            </p>
+
+            <!-- Kit rounds comparison -->
+            <h3 class="cs-subsection-heading">The Essentials Kit</h3>
+            <p class="cs-body">
+              A branded kit given to every camper on arrival &mdash; covering hygiene,
+              comfort, and basic safety.
+            </p>
+
+            <div class="kit-rounds" aria-label="Kit testing iterations">
+
+              <div class="kit-round">
+                <span class="kit-round-label">Round 1 &mdash; Items flagged for removal</span>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Candle</p>
+                    <p class="kit-item-issue">Flagged as fire hazard in campsite context</p>
+                  </div>
+                </div>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Sanitary napkin</p>
+                    <p class="kit-item-issue">Better suited to a medical vending machine</p>
+                  </div>
+                </div>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Dental tablets + toothbrush</p>
+                    <p class="kit-item-issue">Together felt redundant</p>
+                  </div>
+                </div>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Travel mirror</p>
+                    <p class="kit-item-issue">Seen as unnecessary weight</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="kit-round">
+                <span class="kit-round-label">Round 2 &mdash; Refined kit</span>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Hygiene essentials</p>
+                    <p class="kit-item-ok">Retained &mdash; compact, campsite-appropriate</p>
+                  </div>
+                </div>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Basic safety items</p>
+                    <p class="kit-item-ok">Retained &mdash; visible reassurance matters</p>
+                  </div>
+                </div>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Comfort items</p>
+                    <p class="kit-item-ok">Retained &mdash; low weight, high perceived value</p>
+                  </div>
+                </div>
+                <div class="kit-item">
+                  <div>
+                    <p class="kit-item-name">Campsite guide card</p>
+                    <p class="kit-item-ok">Added &mdash; addresses safety perception gap</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Mindfulness session -->
+            <h3 class="cs-subsection-heading" style="margin-top: 36px;">The Mindfulness Session</h3>
+            <p class="cs-body">
+              A guided sensory session at end of day &mdash; stars, hot tea, natural scents,
+              grass underfoot, ambient sounds. Tested virtually, then physically.
+            </p>
+
+            <div class="mindfulness-quote" role="blockquote">
+              <!-- Tape strip -->
+              <div class="tape tape-green"
+                   style="position:absolute; top:-8px; left:50%;
+                          transform:translateX(-50%) rotate(1deg);
+                          width:48px; height:14px;"
+                   aria-hidden="true"></div>
+              "The tea is comforting. Felt alive.<br>My hands feel cute."
+            </div>
+
+            <p class="cs-body">
+              One concern came up consistently: what about campers who didn't want
+              to participate? This shaped the final design &mdash; opt-in, spatially
+              bounded, with a clear perimeter separating participants from the
+              wider campsite.
+            </p>
+
+            <!-- Website usability testing -->
+            <h3 class="cs-subsection-heading">Website Usability Test</h3>
+            <p class="cs-body">
+              Visual design landed strongly. Navigation was clear across all users.
+              The test closed the research loop: we started by understanding what
+              was broken in the camping experience, and ended by testing whether
+              our proposed solution delivered on its promises.
+            </p>
+
+            <div class="friction-list cs-body" role="note" aria-label="Friction points found">
+              <strong>Friction points found:</strong>
+              <ul class="cs-list" style="margin-top: 10px; margin-bottom: 0;">
+                <li>Black and white booking image read as unavailable</li>
+                <li>Amenity information absent from the booking page</li>
+                <li>Promise-delivery gap between service claims and website communication</li>
+              </ul>
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 8: REFLECTION
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="reflection" aria-labelledby="reflection-h">
+
+            <span class="margin-note" style="top:0" aria-hidden="true">honest notes</span>
+
+            <span class="eyebrow">Reflection</span>
+            <h2 class="cs-section-heading" id="reflection-h">The brief gave us four problems. The research gave us one.</h2>
+
+            <p class="cs-body">
+              That shift &mdash; from fixing safety, food, sanitation, and accommodation
+              as parallel issues to resolving a values mismatch between two groups
+              who had never articulated their disagreement &mdash; was the most significant
+              intellectual move of the project.
+            </p>
+            <p class="cs-body">
+              Following Izza through the research kept us grounded. Every time a
+              decision felt abstract, we came back to a simple question:
+              <em>does this change something real for her?</em>
+              If the answer was no, the idea was wrong &mdash; regardless of how
+              elegant it seemed.
+            </p>
+
+            <div class="reflection-cols" aria-label="Reflection notes">
+
+              <div class="reflection-col" data-label="What I'd do differently">
+                <p class="cs-body">
+                  More time with providers. The most generative findings came from
+                  the gap between provider intent and camper experience. We had five
+                  providers. I'd want ten &mdash; enough to understand not just what the
+                  philosophy was, but where it came from and what it would take to shift it.
+                </p>
+              </div>
+
+              <div class="reflection-col" data-label="What I'd do next">
+                <p class="cs-body">
+                  A live pilot with two or three real camping providers &mdash; specifically
+                  testing the operational interventions in the service blueprint. Only a
+                  real pilot would show whether those backstage changes are actually viable.
+                  That's the most critical untested question in the entire design.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               FOOTER CTA
+          ───────────────────────────────────── -->
+          <div class="cs-footer-cta">
+            <p class="cs-footer-cta-text">
+              Full service blueprint, journey maps, and prototype available
+              on the project Miro board.
+            </p>
+            <a href="https://miro.com/app/board/o9J_lzgFFxw=/"
+               class="cs-paper-btn nom-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="View Miro journey map (opens in new tab)">
+              View Miro journey map &rarr;
+            </a>
+            <span class="cs-paper-btn-note" aria-hidden="true">opens in Miro</span>
+          </div>
+
+        </div><!-- .cs-main -->
+
+      </div><!-- .cs-wrapper -->
+
+
+      <!-- Footer bar -->
+      <footer class="about-footer" aria-label="Footer">
+        <span class="footer-copy">
+          &copy; 2025 Faiza Khan &middot; UX Researcher &amp; Service Designer &middot; Dubai, UAE
+        </span>
+        <span class="footer-pg">pg. 04 / ?? &mdash; still writing &rarr; &#x270F;&#xFE0F;</span>
+      </footer>
+
+    </div><!-- .page-content -->
+  </main><!-- .page -->
+
+
+  <!-- ═══════════════════════════════════════════
+       RIGHT TAB NAVIGATION &mdash; Work active
+  ═══════════════════════════════════════════ -->
+  <!-- ── Dark binding strip ── -->
+  <div class="notebook-back-cover" aria-hidden="true"></div>
+
+  <!-- ── Notebook divider tabs ── -->
+  <div class="notebook-tabs" aria-label="Page navigation">
+
+    <a href="../index.html#work" class="nb-tab active" data-page="work" aria-label="Work">
+      <span class="nb-tab-dot" aria-hidden="true"></span>
+      <span class="nb-tab-label">Work</span>
+    </a>
+
+    <a href="about.html" class="nb-tab" data-page="about" aria-label="About">
+      <span class="nb-tab-dot" aria-hidden="true"></span>
+      <span class="nb-tab-label">About</span>
+    </a>
+
+    <a href="contact.html" class="nb-tab" data-page="contact" aria-label="Contact">
+      <span class="nb-tab-dot" aria-hidden="true"></span>
+      <span class="nb-tab-label">Contact</span>
+    </a>
+
+  </div><!-- .notebook-tabs -->
+
+</div><!-- .notebook-wrapper -->
+
+<script src="../js/main.js?v=6"></script>
+
+<script>
+/* Sidebar active link updates on scroll */
+(function () {
+  const links = document.querySelectorAll('.cs-nav-link');
+  const sections = [];
+
+  links.forEach(function (link) {
+    const id = link.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: link });
+  });
+
+  function update() {
+    const scrollY = window.scrollY + 140;
+    let current = sections[0];
+    sections.forEach(function (s) {
+      if (s.el.offsetTop <= scrollY) current = s;
+    });
+    links.forEach(function (l) { l.classList.remove('active'); });
+    if (current) current.link.classList.add('active');
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
+
+<script src="../js/chat.js"></script>
+</body>
+</html>

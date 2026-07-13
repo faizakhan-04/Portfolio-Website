@@ -1,0 +1,7 @@
+{
+  "name": "faiza-portfolio",
+  "version": "1.0.0",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.54.0"
+  }
+}

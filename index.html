@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Faiza Khan &mdash; UX Researcher &amp; Service Designer based in Dubai. Designing beyond interfaces.">
+  <title>Faiza Khan &mdash; UX Researcher &amp; Service Designer</title>
+
+  <!-- Fonts (also imported in CSS &mdash; double ensures no FOUC) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/notebook.css">
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body>
+<div class="notebook-wrapper">
+
+  <!-- ═══════════════════════════════════════════
+       LEFT SPINE &mdash; dark olive binding + metal rings
+  ═══════════════════════════════════════════ -->
+  <aside class="spine" aria-hidden="true">
+    <span class="spine-text">OBSERVE &mdash; UNDERSTAND &mdash; MAKE SENSE &mdash; DESIGN</span>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN PAGE &mdash; cream paper with ruled lines
+  ═══════════════════════════════════════════ -->
+  <main class="page">
+
+    <!-- ── Sticky navigation bar ── -->
+    <header class="navbar">
+      <a href="/" class="nav-logo" aria-label="Faiza Khan home">
+        faiza.
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work"                class="nav-link">Work</a>
+        <a href="pages/about.html"     class="nav-link">About</a>
+        <a href="pages/contact.html"   class="nav-link">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ── Page content (left-padded to clear margin line) ── -->
+    <div class="page-content">
+
+      <!-- ═══════════════════════════════════════════
+           HERO SECTION
+      ═══════════════════════════════════════════ -->
+      <section class="hero" id="home" aria-label="Introduction">
+
+        <!-- ─── LEFT COLUMN: text ─────────────────── -->
+        <div class="hero-left">
+
+          <!-- Margin note (red, Caveat, italic) -->
+          <span class="margin-note" style="top: 0;" aria-hidden="true">observe first!</span>
+
+          <!-- Flow text &mdash; process shorthand -->
+          <p class="flow-text">
+            observe &rarr; understand &rarr;<br>
+            make sense &rarr; design
+          </p>
+
+          <!-- Main headline -->
+          <h1 class="hero-headline">
+            <span class="hl-line">Understanding</span>
+            <span class="hl-line hl-beyond-line">
+              <span class="beyond-wrapper">
+                <span class="beyond-text">beyond</span>
+                <!-- Hand-drawn SVG oval around "beyond" -->
+                <svg class="beyond-oval"
+                     viewBox="0 0 148 52"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">
+                  <path d="M 7 26
+                           C 5 9, 28 2, 74 2
+                           C 120 2, 143 9, 142 26
+                           C 143 43, 120 50, 74 50
+                           C 28 50, 5 43, 7 26 Z"
+                        stroke="#1e1a10"
+                        stroke-width="2.2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </span>
+            <span class="hl-line">interfaces.</span>
+          </h1>
+
+          <!-- Sub-headline -->
+          <p class="hero-sub">
+            I'm a UX Researcher &amp; Service Designer who finds<br>
+            the human story inside messy systems.
+          </p>
+
+          <!-- CTA buttons -->
+          <div class="hero-ctas">
+            <a href="#work" class="btn-primary">View case studies &rarr;</a>
+            <a href="pages/about.html" class="btn-ghost">About me</a>
+          </div>
+
+          <!-- Currently thinking about -->
+          <div class="currently-thinking">
+            <span class="thinking-label">Currently thinking about:</span>
+            <p class="thinking-text">
+              How might we design services that feel human in every interaction?
+            </p>
+          </div>
+
+        </div><!-- .hero-left -->
+
+        <!-- ─── RIGHT COLUMN: research pinboard ────── -->
+        <div class="hero-right" aria-label="How I approach research">
+
+          <div class="pinboard">
+
+            <!-- SVG: dashed connection lines + annotations (behind stickies) -->
+            <svg class="pinboard-svg"
+                 viewBox="0 0 400 500"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
+              <defs>
+                <marker id="pb-ah" markerWidth="8" markerHeight="8"
+                        refX="4" refY="4" orient="auto">
+                  <path d="M 0 1 L 5 4 L 0 7"
+                        stroke="rgba(30,26,18,0.40)"
+                        stroke-width="1.2"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                </marker>
+              </defs>
+
+              <!-- Line 1: green &rarr; yellow -->
+              <path d="M 170 88 Q 190 66 210 126"
+                    stroke="rgba(30,26,18,0.35)"
+                    stroke-width="1.2"
+                    stroke-dasharray="5 3"
+                    fill="none"
+                    stroke-linecap="round"
+                    marker-end="url(#pb-ah)"/>
+
+              <!-- Line 2: yellow &rarr; pink (diagonal sweep) -->
+              <path d="M 292 200 Q 198 226 94 260"
+                    stroke="rgba(30,26,18,0.35)"
+                    stroke-width="1.2"
+                    stroke-dasharray="5 3"
+                    fill="none"
+                    stroke-linecap="round"
+                    marker-end="url(#pb-ah)"/>
+
+              <!-- Line 3: pink &rarr; cream -->
+              <path d="M 176 330 Q 194 312 214 370"
+                    stroke="rgba(30,26,18,0.35)"
+                    stroke-width="1.2"
+                    stroke-dasharray="5 3"
+                    fill="none"
+                    stroke-linecap="round"
+                    marker-end="url(#pb-ah)"/>
+
+              <!-- Annotation: always start here (near green) -->
+              <text x="6" y="11"
+                    font-family="Caveat, cursive"
+                    font-size="11"
+                    fill="rgba(192,72,56,0.75)"
+                    font-style="italic">always start here</text>
+
+              <!-- Annotation: repeat until it clicks (between green &amp; yellow) -->
+              <text x="155" y="48"
+                    font-family="Caveat, cursive"
+                    font-size="10"
+                    fill="rgba(30,26,18,0.45)"
+                    font-style="italic">repeat until it clicks</text>
+
+              <!-- Annotation: zoom out (near pink) -->
+              <text x="8" y="252"
+                    font-family="Caveat, cursive"
+                    font-size="10"
+                    fill="rgba(30,26,18,0.45)"
+                    font-style="italic">zoom out</text>
+
+              <!-- Annotation: this is the point (near cream) -->
+              <text x="214" y="292"
+                    font-family="Caveat, cursive"
+                    font-size="11"
+                    fill="rgba(192,72,56,0.75)"
+                    font-style="italic">this is the point</text>
+
+            </svg>
+
+            <!-- Sticky 1: sage green -->
+            <div class="sticky sticky-sage pinboard-sticky"
+                 role="note"
+                 aria-label="I start with observation"
+                 style="top:16px; left:4px; transform:rotate(-3deg);">
+              <!-- Red anchor dot pinned at top-left corner -->
+              <div class="pinboard-anchor" aria-hidden="true"></div>
+              <div class="tape tape-green"
+                   style="position:absolute; top:-11px; left:38%;
+                          transform:translateX(-50%) rotate(-3.5deg);
+                          width:40px; height:15px; opacity:0.55;"
+                   aria-hidden="true"></div>
+              <span class="sticky-label">I START WITH OBSERVATION</span>
+              <p class="sticky-body">Before questions, I watch. The real story lives in the workarounds.</p>
+            </div>
+
+            <!-- Sticky 2: yellow -->
+            <div class="sticky sticky-yellow pinboard-sticky"
+                 role="note"
+                 aria-label="I look for patterns"
+                 style="top:55px; left:210px; transform:rotate(2deg);">
+              <div class="tape tape-default"
+                   style="position:absolute; top:-10px; left:58%;
+                          transform:translateX(-50%) rotate(2.5deg);
+                          width:44px; height:16px; opacity:0.65;"
+                   aria-hidden="true"></div>
+              <span class="sticky-label">I LOOK FOR PATTERNS</span>
+              <p class="sticky-body">Single behaviours are anecdotes. Repeated across people, they become signals.</p>
+            </div>
+
+            <!-- Sticky 3: pink -->
+            <div class="sticky sticky-pink pinboard-sticky"
+                 role="note"
+                 aria-label="I care about systems"
+                 style="top:260px; left:10px; transform:rotate(-1.5deg);">
+              <div class="tape tape-pink"
+                   style="position:absolute; top:-11px; left:44%;
+                          transform:translateX(-50%) rotate(-4.2deg);
+                          width:36px; height:14px; opacity:0.50;"
+                   aria-hidden="true"></div>
+              <span class="sticky-label">I CARE ABOUT SYSTEMS</span>
+              <p class="sticky-body">Not just the screen &mdash; the ecosystem of pressures and people behind it.</p>
+            </div>
+
+            <!-- Sticky 4: cream -->
+            <div class="sticky sticky-cream pinboard-sticky"
+                 role="note"
+                 aria-label="I translate mess into direction"
+                 style="top:300px; left:212px; transform:rotate(4deg);">
+              <div class="tape tape-blue"
+                   style="position:absolute; top:-10px; left:54%;
+                          transform:translateX(-50%) rotate(3deg);
+                          width:42px; height:15px; opacity:0.58;"
+                   aria-hidden="true"></div>
+              <span class="sticky-label">I TRANSLATE MESS INTO DIRECTION</span>
+              <p class="sticky-body">Research only matters if it moves something forward.</p>
+            </div>
+
+          </div><!-- .pinboard -->
+
+        </div><!-- .hero-right -->
+
+      </section><!-- .hero -->
+
+
+      <!-- ═══════════════════════════════════════════
+           STATS RIBBON
+      ═══════════════════════════════════════════ -->
+      <div class="stats-ribbon" aria-label="Research statistics">
+        <div class="stat-item">
+          <span class="stat-num">18</span>
+          <span class="stat-label">Stakeholder Interviews Conducted</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">120+</span>
+          <span class="stat-label">Data Points Collected</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Key System Gaps Identified</span>
+        </div>
+      </div>
+
+
+      <!-- ═══════════════════════════════════════════
+           CASE STUDIES SECTION
+      ═══════════════════════════════════════════ -->
+      <section class="case-studies" id="work" aria-labelledby="work-heading">
+
+        <!-- Margin note -->
+        <span class="margin-note" style="top: 8px;" aria-hidden="true">the work &darr;</span>
+
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Selected Work</span>
+            <h2 class="section-title" id="work-heading">Selected Case Studies</h2>
+          </div>
+          <a href="#" class="btn-ghost-small">View all projects &rarr;</a>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- ── Card 1: StraySafe ── -->
+          <article class="case-card reveal" aria-label="StraySafe case study">
+            <a href="pages/straysafe.html" class="card-img-link" tabindex="-1" aria-hidden="true">
+              <div class="card-img card-img-straysafe">
+                <div class="card-img-placeholder">
+                  <span>&#x1F43E;</span>
+                </div>
+              </div>
+            </a>
+            <div class="card-body">
+              <div class="card-tags" aria-label="Tags:">
+                <span class="tag">Service Design</span>
+                <span class="tag-sep" aria-hidden="true">/</span>
+                <span class="tag">User Research</span>
+              </div>
+              <h3 class="card-title">
+                StraySafe: Designing an animal-centered service system
+              </h3>
+              <p class="card-desc">
+                Exploring how fragmented stray animal care systems can be transformed
+                into a coordinated ecosystem through collaborative design.
+              </p>
+              <div class="card-meta">
+                <span class="card-year">2024 &middot; Dubai, UAE</span>
+                <span class="card-pub">ServDes'25, IIT Hyderabad</span>
+              </div>
+              <a href="pages/straysafe.html" class="card-link">Read case study &rarr;</a>
+            </div>
+          </article>
+
+          <!-- ── Card 2: Nomadology ── -->
+          <article class="case-card reveal" style="transition-delay: 0.22s;" aria-label="Nomadology case study">
+            <a href="pages/nomadology.html" class="card-img-link" tabindex="-1" aria-hidden="true">
+              <div class="card-img card-img-nomadology">
+                <div class="card-img-placeholder">
+                  <span>&#x26FA;</span>
+                </div>
+              </div>
+            </a>
+            <div class="card-body">
+              <div class="card-tags" aria-label="Tags:">
+                <span class="tag">Service Design</span>
+                <span class="tag-sep" aria-hidden="true">/</span>
+                <span class="tag">User Research</span>
+              </div>
+              <h3 class="card-title">
+                Nomadology: Designing a Camping Experience
+              </h3>
+              <p class="card-desc">
+                Service design research and concept for improving
+                the camping experience in India.
+              </p>
+              <div class="card-meta">
+                <span class="card-year">2024 &middot; India</span>
+              </div>
+              <a href="pages/nomadology.html" class="card-link">Read case study &rarr;</a>
+            </div>
+          </article>
+
+          <!-- ── Card 3: Coming soon ── -->
+          <article class="case-card case-card-wip reveal" style="transition-delay: 0.34s;" aria-label="More projects coming soon">
+            <div class="card-img card-img-wip">
+              <div class="card-img-placeholder" style="position:relative;">
+                <!-- WIP sticky note -->
+                <div class="wip-sticky">
+                  <div class="tape tape-default"
+                       style="position:absolute; top:-8px; left:50%;
+                              transform:translateX(-50%) rotate(1.5deg);
+                              width:32px; height:14px;"
+                       aria-hidden="true"></div>
+                  Research in Progress
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">More Projects Coming Soon</h3>
+              <p class="card-desc">
+                Exploring people, systems and meaningful experiences. Stay tuned.
+              </p>
+              <span class="card-link" aria-hidden="true">&rarr;</span>
+            </div>
+          </article>
+
+        </div><!-- .cards-grid -->
+
+      </section><!-- .case-studies -->
+
+
+      <!-- ═══════════════════════════════════════════
+           APPROACH SECTION &mdash; "How I think" four cards
+      ═══════════════════════════════════════════ -->
+      <section class="approach-section reveal" id="approach" aria-labelledby="approach-heading">
+
+        <!-- Margin note -->
+        <span class="margin-note" style="top: 8px;" aria-hidden="true">&#x21B3; method</span>
+
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Approach</span>
+            <h2 class="section-title" id="approach-heading">How I think</h2>
+          </div>
+        </div>
+
+        <div class="think-grid">
+
+          <!-- Card 1 -->
+          <div class="think-card reveal" style="transition-delay:0.10s; transform:rotate(-0.6deg);">
+            <div class="tape tape-green"
+                 style="position:absolute; top:-9px; left:50%;
+                        transform:translateX(-50%) rotate(1.5deg);
+                        width:36px; height:14px;"
+                 aria-hidden="true"></div>
+            <span class="think-icon">&rarr;</span>
+            <h3 class="think-title">I start with observation</h3>
+            <p class="think-body">
+              Before questions, I watch. The gap between stated and actual behaviour
+              lives in the quiet moments &mdash; the workarounds, the hesitations, the
+              things people stop noticing.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="think-card reveal" style="transition-delay:0.22s; transform:rotate(0.8deg);">
+            <div class="tape tape-default"
+                 style="position:absolute; top:-9px; left:50%;
+                        transform:translateX(-50%) rotate(-2deg);
+                        width:40px; height:14px;"
+                 aria-hidden="true"></div>
+            <span class="think-icon">&#x21BB;</span>
+            <h3 class="think-title">I look for patterns</h3>
+            <p class="think-body">
+              Single behaviours are anecdotes. Repeated across contexts, they become
+              signals. I look for the pressures and beliefs that make people act the
+              way they do.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="think-card reveal" style="transition-delay:0.34s; transform:rotate(1.2deg);">
+            <div class="tape tape-blue"
+                 style="position:absolute; top:-9px; left:50%;
+                        transform:translateX(-50%) rotate(2.5deg);
+                        width:38px; height:14px;"
+                 aria-hidden="true"></div>
+            <span class="think-icon">&#x25CE;</span>
+            <h3 class="think-title">I care about systems</h3>
+            <p class="think-body">
+              Not just the screen in front of someone &mdash; the ecosystem of pressures,
+              actors, and constraints behind it.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="think-card reveal" style="transition-delay:0.48s; transform:rotate(-1deg);">
+            <div class="tape tape-pink"
+                 style="position:absolute; top:-9px; left:50%;
+                        transform:translateX(-50%) rotate(-1deg);
+                        width:42px; height:14px;"
+                 aria-hidden="true"></div>
+            <span class="think-icon">&#x2726;</span>
+            <h3 class="think-title">I translate mess into direction</h3>
+            <p class="think-body">
+              Research only matters if it moves something. I synthesise findings into
+              clear, honest, directional knowledge that teams can act on.
+            </p>
+          </div>
+
+        </div><!-- .think-grid -->
+
+        <p class="think-footnote">
+          In practice: semi-structured interviews, service blueprints, affinity mapping, and
+          concept testing; most recently across 18 stakeholder interviews with 5 NGOs
+          for StraySafe.
+        </p>
+
+      </section><!-- .approach-section -->
+
+
+      <!-- ═══════════════════════════════════════════
+           FOOTER
+      ═══════════════════════════════════════════ -->
+      <footer class="footer" id="contact" aria-label="Footer">
+
+        <!-- Margin note -->
+        <span class="margin-note" style="top: 28px;" aria-hidden="true">say hello &#x1F44B;</span>
+
+        <div class="footer-inner">
+
+          <!-- Column 1: Recently on my mind -->
+          <div class="footer-col">
+            <span class="eyebrow">Recently on my mind</span>
+            <p class="footer-thought">
+              "Slowing down, observing better,<br>
+              designing with empathy."
+            </p>
+            <!-- Botanical illustration -->
+            <svg class="botanical-footer"
+                 width="48" height="64"
+                 viewBox="0 0 48 64"
+                 fill="none"
+                 aria-hidden="true">
+              <path d="M 24 60 Q 22 46 19 34 Q 15 22 10 15"
+                    stroke="rgba(100,85,55,0.30)"
+                    stroke-width="1.1"
+                    fill="none"
+                    stroke-linecap="round"/>
+              <path d="M 19 34 Q 12 29 7 22"
+                    stroke="rgba(100,85,55,0.26)"
+                    stroke-width="1"
+                    fill="none"
+                    stroke-linecap="round"/>
+              <path d="M 19 34 Q 25 27 29 21"
+                    stroke="rgba(100,85,55,0.26)"
+                    stroke-width="1"
+                    fill="none"
+                    stroke-linecap="round"/>
+              <ellipse cx="7" cy="21" rx="4" ry="2.5"
+                       stroke="rgba(100,85,55,0.24)"
+                       stroke-width="1"
+                       fill="none"
+                       transform="rotate(-25 7 21)"/>
+              <ellipse cx="29" cy="20" rx="4" ry="2.5"
+                       stroke="rgba(100,85,55,0.24)"
+                       stroke-width="1"
+                       fill="none"
+                       transform="rotate(20 29 20)"/>
+            </svg>
+          </div>
+
+          <!-- Column 2: Don Norman quote -->
+          <div class="footer-col footer-quote-col">
+            <blockquote class="footer-quote">
+              "The way we design systems shows the way we
+              <span class="care-wrapper">
+                care
+                <!-- Hand-drawn oval around "care" -->
+                <svg class="care-oval"
+                     viewBox="0 0 48 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                     aria-hidden="true">
+                  <path d="M 3 12
+                           C 2 4, 13 1, 24 1
+                           C 35 1, 46 4, 45 12
+                           C 46 20, 35 23, 24 23
+                           C 13 23, 2 20, 3 12 Z"
+                        stroke="#1e1a10"
+                        stroke-width="1.8"
+                        fill="none"
+                        stroke-linecap="round"/>
+                </svg>
+              </span>
+              for people."
+              <cite class="footer-cite">&mdash; Don Norman</cite>
+            </blockquote>
+          </div>
+
+          <!-- Column 3: Let's connect -->
+          <div class="footer-col footer-connect-col">
+            <span class="eyebrow">Let's connect</span>
+            <div class="footer-links">
+              <a href="mailto:faiza.khan14.fk@gmail.com" class="footer-link">
+                <span class="footer-link-icon" aria-hidden="true">&#x2709;</span>
+                faiza.khan14.fk@gmail.com
+              </a>
+              <a href="https://linkedin.com/in/faizafk"
+                 class="footer-link"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <span class="footer-link-icon" aria-hidden="true">in</span>
+                linkedin.com/in/faizafk
+              </a>
+              <span class="footer-location">
+                <span class="footer-link-icon" aria-hidden="true">&#x25CE;</span>
+                Dubai, UAE
+              </span>
+            </div>
+          </div>
+
+        </div><!-- .footer-inner -->
+
+        <!-- Footer bar: copyright -->
+        <div class="footer-bar">
+          <span class="footer-copy">
+            &copy; 2026 Faiza Khan &middot; UX Researcher &amp; Service Designer &middot; Dubai, UAE
+          </span>
+        </div>
+
+      </footer>
+
+    </div><!-- .page-content -->
+  </main><!-- .page -->
+
+
+  <!-- ── Dark binding strip ── -->
+  <div class="notebook-back-cover" aria-hidden="true"></div>
+
+  <!-- ── Notebook divider tabs ── -->
+  <div class="notebook-tabs" aria-label="Page navigation">
+
+    <a href="#work" class="nb-tab active" data-page="work" aria-label="Work">
+      <span class="nb-tab-label">Work</span>
+    </a>
+
+    <a href="pages/about.html" class="nb-tab" data-page="about" aria-label="About">
+      <span class="nb-tab-label">About</span>
+    </a>
+
+    <a href="pages/contact.html" class="nb-tab" data-page="contact" aria-label="Contact">
+      <span class="nb-tab-label">Contact</span>
+    </a>
+
+  </div>
+
+</div><!-- .notebook-wrapper -->
+
+<script src="js/main.js?v=6"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

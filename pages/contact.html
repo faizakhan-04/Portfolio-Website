@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Faiza Khan &mdash; UX Researcher &amp; Service Designer based in Dubai.">
+  <title>Contact &mdash; Faiza Khan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/notebook.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/chat.css">
+
+  <style>
+    /* ── Contact page specific ── */
+    .contact-hero {
+      padding: 64px 0 72px;
+      position: relative;
+      border-bottom: 0.5px solid rgba(100, 85, 55, 0.12);
+    }
+
+    .contact-headline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1.08;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      max-width: 560px;
+      margin-bottom: 22px;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.9s ease-out 0.15s forwards;
+    }
+
+    .contact-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink-mid);
+      max-width: 480px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.85s ease-out 0.32s forwards;
+    }
+
+    .contact-botanical-hero {
+      position: absolute;
+      top: 48px;
+      right: 0;
+      width: 44px;
+      height: 62px;
+      pointer-events: none;
+    }
+
+    /* ── Contact cards ── */
+    .contact-page-section {
+      padding: 64px 0 60px;
+      border-bottom: 0.5px solid rgba(100, 85, 55, 0.10);
+      position: relative;
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 560px;
+      margin-top: 12px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 0.5px solid rgba(100, 85, 55, 0.10);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-card:last-child {
+      border-bottom: none;
+    }
+
+    a.contact-card:hover {
+      opacity: 0.68;
+    }
+
+    .contact-card-icon {
+      width: 40px;
+      height: 40px;
+      border: 0.5px solid rgba(100, 85, 55, 0.20);
+      background: var(--paper-warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--olive);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .contact-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .contact-card-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-faint);
+    }
+
+    .contact-card-value {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    /* ── Availability + sticky note row ── */
+    .contact-bottom-row {
+      padding: 56px 0 64px;
+      display: flex;
+      align-items: flex-start;
+      gap: 64px;
+      position: relative;
+    }
+
+    .contact-avail-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-avail-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--ink-faint);
+      margin-bottom: 4px;
+    }
+
+    /* sticky note on contact page */
+    .contact-sticky {
+      background: var(--sticky-yellow);
+      padding: 14px 16px 18px;
+      font-family: 'Caveat', cursive;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.12);
+      transform: rotate(-2deg);
+      position: relative;
+      max-width: 220px;
+    }
+
+    .contact-sticky:hover {
+      box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    /* annotation below sticky */
+    .contact-annotation {
+      font-family: 'Caveat', cursive;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--ink-faint);
+      margin-top: 10px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="notebook-wrapper">
+
+  <!-- ═══════════════════════════════════════════
+       LEFT SPINE
+  ═══════════════════════════════════════════ -->
+  <aside class="spine" aria-hidden="true">
+    <span class="spine-text">OBSERVE &mdash; UNDERSTAND &mdash; MAKE SENSE &mdash; DESIGN</span>
+  </aside>
+
+
+  <!-- ═══════════════════════════════════════════
+       MAIN PAGE
+  ═══════════════════════════════════════════ -->
+  <main class="page">
+
+    <!-- ── Navbar ── -->
+    <header class="navbar">
+      <a href="../index.html" class="nav-logo" aria-label="Faiza Khan home">
+        faiza.
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html#work"  class="nav-link">Work</a>
+        <a href="about.html"          class="nav-link">About</a>
+        <a href="contact.html"        class="nav-link" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <div class="page-content">
+
+
+      <!-- ═══════════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════════ -->
+      <section class="contact-hero" id="contact" aria-labelledby="contact-headline">
+
+        <span class="margin-note" style="top: 64px;" aria-hidden="true">say hello &#x1F44B;</span>
+
+        <span class="eyebrow">Get in touch</span>
+
+        <h1 class="contact-headline" id="contact-headline">
+          Let's work together.
+        </h1>
+
+        <p class="contact-sub">
+          Open to UX Research and Service Design opportunities
+          in Dubai and remotely.
+        </p>
+
+        <!-- Botanical illustration -->
+        <svg class="contact-botanical-hero"
+             viewBox="0 0 44 62"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg"
+             aria-hidden="true">
+          <path d="M 22 58 Q 20 44 17 30 Q 13 18 9 12"
+                stroke="rgba(100,85,55,0.30)" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M 17 30 Q 10 24 6 16"
+                stroke="rgba(100,85,55,0.26)" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <path d="M 17 30 Q 24 22 28 15"
+                stroke="rgba(100,85,55,0.26)" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <ellipse cx="6" cy="15" rx="4" ry="2.5"
+                   stroke="rgba(100,85,55,0.22)" stroke-width="1" fill="none"
+                   transform="rotate(-28 6 15)"/>
+          <ellipse cx="28" cy="14" rx="4" ry="2.5"
+                   stroke="rgba(100,85,55,0.22)" stroke-width="1" fill="none"
+                   transform="rotate(22 28 14)"/>
+          <circle cx="9" cy="12" r="1.4" fill="rgba(100,85,55,0.18)"/>
+        </svg>
+
+      </section><!-- .contact-hero -->
+
+
+      <!-- ═══════════════════════════════════════════
+           CONTACT DETAILS
+      ═══════════════════════════════════════════ -->
+      <section class="contact-page-section reveal" aria-label="Contact details">
+
+        <span class="eyebrow">Reach me at</span>
+
+        <div class="contact-cards">
+
+          <a href="mailto:faiza.khan14.fk@gmail.com" class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">&#x2709;</div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">faiza.khan14.fk@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://linkedin.com/in/faizakhan04"
+             class="contact-card"
+             target="_blank"
+             rel="noopener noreferrer">
+            <div class="contact-card-icon" aria-hidden="true">in</div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">LinkedIn</span>
+              <span class="contact-card-value">linkedin.com/in/faizakhan04</span>
+            </div>
+          </a>
+
+          <span class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">&#x25CE;</div>
+            <div class="contact-card-text">
+              <span class="contact-card-label">Location</span>
+              <span class="contact-card-value">Dubai, UAE</span>
+            </div>
+          </span>
+
+        </div>
+      </section><!-- .contact-page-section -->
+
+
+      <!-- ═══════════════════════════════════════════
+           AVAILABILITY + STICKY NOTE
+      ═══════════════════════════════════════════ -->
+      <div class="contact-bottom-row reveal">
+
+        <!-- Availability badge -->
+        <div class="contact-avail-col">
+          <span class="contact-avail-label">Current status</span>
+          <div class="avail-badge" role="status" aria-label="Open to opportunities">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Open to opportunities
+          </div>
+        </div>
+
+        <!-- Personal sticky note -->
+        <div>
+          <div class="contact-sticky" role="note">
+            <!-- Tape strip -->
+            <div class="tape tape-default"
+                 style="position:absolute; top:-9px; left:50%;
+                        transform:translateX(-50%) rotate(-2deg);
+                        width:40px; height:15px;"
+                 aria-hidden="true"></div>
+            Designed with curiosity,<br>
+            intention and care &#x270F;&#xFE0F;
+          </div>
+          <p class="contact-annotation" aria-hidden="true">&mdash; always.</p>
+        </div>
+
+      </div>
+
+
+      <!-- ═══════════════════════════════════════════
+           FOOTER BAR
+      ═══════════════════════════════════════════ -->
+      <footer class="about-footer" aria-label="Footer">
+        <span class="footer-copy">
+          &copy; 2026 Faiza Khan &middot; UX Researcher &amp; Service Designer &middot; Dubai, UAE
+        </span>
+      </footer>
+
+    </div><!-- .page-content -->
+  </main><!-- .page -->
+
+
+  <!-- ═══════════════════════════════════════════
+       RIGHT TAB NAVIGATION
+       Vertical tabs: Work &middot; About &middot; Contact
+  ═══════════════════════════════════════════ -->
+  <!-- ── Dark binding strip ── -->
+  <div class="notebook-back-cover" aria-hidden="true"></div>
+
+  <!-- ── Notebook divider tabs ── -->
+  <div class="notebook-tabs" aria-label="Page navigation">
+
+    <a href="../index.html#work" class="nb-tab" data-page="work" aria-label="Work">
+      <span class="nb-tab-label">Work</span>
+    </a>
+
+    <a href="about.html" class="nb-tab" data-page="about" aria-label="About">
+      <span class="nb-tab-label">About</span>
+    </a>
+
+    <a href="contact.html" class="nb-tab active" data-page="contact" aria-label="Contact">
+      <span class="nb-tab-label">Contact</span>
+    </a>
+
+  </div><!-- .notebook-tabs -->
+
+</div><!-- .notebook-wrapper -->
+
+<script src="../js/main.js?v=6"></script>
+<script src="../js/chat.js"></script>
+</body>
+</html>

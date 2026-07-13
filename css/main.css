@@ -1,0 +1,1130 @@
+/* ============================================================
+   Faiza Khan Portfolio — main.css
+   Variables · Reset · Typography · Layout · Sections · Anim
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Caveat:wght@400;500;600;700&display=swap');
+
+/* ── Custom Properties ── */
+:root {
+  /* Paper */
+  --paper:          #faf8f4;
+  --paper-warm:     #f5f2ea;
+  --ruled-line:     rgba(100, 85, 55, 0.055);
+
+  /* Ink */
+  --ink:            #1e1a10;
+  --ink-soft:       #2e2a1e;
+  --ink-mid:        #4a4435;
+  --ink-muted:      #6e6555;
+  --ink-faint:      #9a9080;
+
+  /* Notebook chrome */
+  --spine:          #3d4a2e;
+  --spine-dark:     #2d3820;
+  --spine-text:     rgba(255, 255, 255, 0.25);
+  --tab-bg:         transparent;
+
+  /* Accents */
+  --olive:          #5a6e48;
+  --olive-light:    #7a9060;
+  --olive-pale:     #d8e4cc;
+  --terra:          #b85838;
+  --terra-pale:     #f0ddd0;
+  --red-thread:     #c04838;
+  --mustard:        #c09830;
+  --mustard-pale:   #f0e8c0;
+
+  /* Sticky notes */
+  --sticky-yellow:  #f5e860;
+  --sticky-sage:    #a8c89a;
+  --sticky-pink:    #e8b0c0;
+  --sticky-blue:    #a0c0d8;
+  --sticky-peach:   #f0c888;
+  --sticky-lavender:#c8b8e8;
+  --sticky-cream:   #ede8d8;
+  --sticky-white:   #fffef5;
+
+  /* Tape */
+  --tape-default:   rgba(205, 190, 152, 0.58);
+  --tape-green:     rgba(160, 200, 148, 0.48);
+  --tape-blue:      rgba(155, 185, 215, 0.45);
+  --tape-pink:      rgba(210, 160, 140, 0.42);
+
+  /* Shadows */
+  --sh-s:  1px 2px 8px rgba(20, 16, 8, 0.10);
+  --sh-m:  2px 4px 16px rgba(20, 16, 8, 0.13);
+  --sh-l:  4px 8px 28px rgba(20, 16, 8, 0.17);
+
+  /* Layout */
+  --spine-w:   52px;
+  --tab-w:     0px;
+  --margin-px: 64px;
+  --content-pl: 80px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #1e1e12;
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ============================================================
+   NOTEBOOK WRAPPER
+   ============================================================ */
+
+.notebook-wrapper {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Page ── */
+.page {
+  flex: 1;
+  margin-left: var(--spine-w);
+  margin-right: var(--tab-w);
+  min-height: 100vh;
+  background-color: #faf8f4;
+  /* Warm paper grain (SVG noise) layered under barely-there ruled lines.
+     You feel the paper before you see the lines. */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.39 0 0 0 0 0.33 0 0 0 0 0.22 0 0 0 0.028 0'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 31px,
+      var(--ruled-line) 32px
+    );
+  position: relative;
+}
+
+/* ── Page content area ── */
+.page-content {
+  padding: 0 56px 0 var(--content-pl);
+  position: relative;
+}
+
+
+/* ============================================================
+   NAVIGATION BAR
+   ============================================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 56px 16px var(--content-pl);
+  background: rgba(250, 248, 244, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid rgba(100, 85, 55, 0.14);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: -0.01em;
+}
+
+.nav-logo-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--olive);
+  margin-left: 1px;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  background: var(--terra);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-end-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--olive);
+  margin-left: -16px;
+}
+
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+  display: grid;
+  grid-template-columns: 44fr 56fr;
+  min-height: calc(100vh - 53px);
+  padding: 52px 0 64px;
+  gap: 24px;
+  position: relative;
+  align-items: start;
+}
+
+/* ── Hero Left ── */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-right: 24px;
+  position: relative;
+}
+
+.flow-text {
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.8s ease-out 0.1s forwards;
+}
+
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.03;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.9s ease-out 0.2s forwards;
+}
+
+.hl-line {
+  display: block;
+}
+
+.hl-beyond-line {
+  display: block;
+  position: relative;
+}
+
+/* "beyond" word with hand-drawn oval */
+.beyond-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.beyond-text {
+  position: relative;
+  z-index: 1;
+}
+
+.beyond-oval {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-1.5deg);
+  width: calc(100% + 28px);
+  height: calc(100% + 20px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.beyond-oval path {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: drawOval 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.55s forwards;
+}
+
+@keyframes drawOval {
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.70;
+  color: var(--ink-mid);
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.85s ease-out 0.4s forwards;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.85s ease-out 0.5s forwards;
+}
+
+/* Primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--ink);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 13px 28px;
+  border-radius: 0;
+  transition: background 0.22s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--olive);
+}
+
+/* Ghost button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  border-bottom: 0.5px solid var(--ink-mid);
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+  transition: color 0.2s, border-color 0.2s, gap 0.2s;
+  gap: 4px;
+}
+
+.btn-ghost:hover {
+  color: var(--olive);
+  border-color: var(--olive);
+  gap: 8px;
+}
+
+/* Currently thinking */
+.currently-thinking {
+  border-left: 1.5px solid rgba(100, 85, 55, 0.20);
+  padding-left: 14px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.85s ease-out 0.62s forwards;
+}
+
+.thinking-label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+
+.thinking-text {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.48;
+  color: var(--ink-mid);
+  font-style: italic;
+}
+
+/* ── Hero Right — research pinboard ── */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+.pinboard {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  flex-shrink: 0;
+}
+
+/* SVG connection lines — sits behind stickies */
+.pinboard-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* All pinboard stickies: absolute within the pinboard canvas */
+.pinboard-sticky {
+  position: absolute;
+  width: 166px;
+  min-height: 140px;
+  padding: 14px 16px 18px;
+  z-index: 2;
+  animation: none !important;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Override the narrower widths set by the colour-variant classes */
+.pinboard .sticky-sage,
+.pinboard .sticky-yellow,
+.pinboard .sticky-pink,
+.pinboard .sticky-cream { width: 166px; }
+
+/* Gentle lift on hover */
+.pinboard-sticky:hover {
+  transform: rotate(0deg) translateY(-4px) !important;
+  z-index: 10;
+  box-shadow: 5px 10px 24px rgba(0,0,0,0.20);
+}
+
+/* Label */
+.pinboard-sticky .sticky-label {
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Body */
+.pinboard-sticky .sticky-body {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Red pin dot at top-left corner of green sticky */
+.pinboard-anchor {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(192, 72, 56, 0.78);
+  box-shadow: 0 1px 3px rgba(192,72,56,0.35);
+  z-index: 3;
+}
+
+/* ── Scrapbook elements within hero-right ── */
+
+/* Process arrows SVG */
+.arrows-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Red thread SVG */
+.red-thread {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Handwritten annotation (top-right) */
+.hero-annotation {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 128px;
+  font-family: 'Caveat', cursive;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  transform: rotate(0.8deg);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Annotation below stickies */
+.stickies-annotation {
+  position: absolute;
+  top: 470px;
+  left: 8px;
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  z-index: 3;
+}
+
+/* Botanical pressed flower — bottom right of hero collage */
+.botanical-hero {
+  position: absolute;
+  bottom: 6px;
+  right: 2px;
+  width: 58px;
+  height: 84px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.88;
+}
+
+/* Small star doodle near Venn diagram */
+.hero-star-doodle {
+  position: absolute;
+  top: 202px;
+  right: 152px;
+  width: 16px;
+  height: 16px;
+  z-index: 3;
+  pointer-events: none;
+  transform: rotate(14deg);
+}
+
+
+/* ============================================================
+   STATS RIBBON
+   ============================================================ */
+
+.stats-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 28px 0;
+  border-top: 0.5px solid rgba(100, 85, 55, 0.14);
+  border-bottom: 0.5px solid rgba(100, 85, 55, 0.14);
+  margin-bottom: 72px;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 16px;
+}
+
+.stat-item:not(:last-child) {
+  border-right: 0.5px solid rgba(100, 85, 55, 0.12);
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+.stat-divider {
+  font-size: 20px;
+  color: rgba(100, 85, 55, 0.20);
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   CASE STUDIES SECTION
+   ============================================================ */
+
+.case-studies {
+  padding-bottom: 88px;
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.btn-ghost-small {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: var(--ink-mid);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  border-bottom: 0.5px solid var(--ink-faint);
+  padding-bottom: 2px;
+  letter-spacing: 0.03em;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  margin-bottom: 6px;
+}
+
+.btn-ghost-small:hover {
+  color: var(--olive);
+  border-color: var(--olive);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ── Case Card ── */
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 0.5px solid rgba(100, 85, 55, 0.14);
+  box-shadow: var(--sh-s);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  position: relative;
+}
+
+.case-card:hover {
+  box-shadow: var(--sh-m);
+  transform: translateY(-3px);
+}
+
+.card-img-link {
+  display: block;
+  text-decoration: none;
+}
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--paper-warm);
+  position: relative;
+}
+
+.card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--paper-warm);
+}
+
+.card-img-placeholder span {
+  font-size: 32px;
+  opacity: 0.6;
+}
+
+.card-img-straysafe {
+  background: #e8ddd0;
+}
+
+.card-img-nomadology {
+  background: #d8e4d0;
+}
+
+.card-img-wip {
+  background: var(--paper-warm);
+}
+
+.wip-sticky {
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mid);
+  background: var(--sticky-yellow);
+  padding: 8px 12px 10px;
+  position: relative;
+  transform: rotate(-1.8deg);
+  box-shadow: var(--sh-s);
+}
+
+.card-body {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--ink-faint);
+}
+
+.tag-sep {
+  color: rgba(100, 85, 55, 0.30);
+  font-size: 11px;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.22;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.70;
+  color: var(--ink-mid);
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.card-year {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.card-pub {
+  font-family: 'Caveat', cursive;
+  font-size: 14px;
+  color: var(--olive);
+  font-weight: 600;
+}
+
+.card-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-mid);
+  border-bottom: 0.5px solid var(--ink-faint);
+  padding-bottom: 1px;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.card-link:hover {
+  color: var(--olive);
+  border-color: var(--olive);
+}
+
+.case-card-wip .card-link {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+
+/* ============================================================
+   APPROACH SECTION — "How I think" four cards, single row
+   ============================================================ */
+
+.approach-section {
+  padding-bottom: 88px;
+  position: relative;
+}
+
+.think-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 8px;
+}
+
+.think-card {
+  position: relative;
+  background: var(--paper-warm);
+  padding: 18px 16px 20px;
+  box-shadow: var(--sh-s);
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+  /* individual rotations set inline */
+}
+
+.think-card:hover {
+  box-shadow: var(--sh-m);
+  z-index: 2;
+}
+
+.think-icon {
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--olive);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.think-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.think-body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 13.5px;
+  line-height: 1.74;
+  color: var(--ink-mid);
+}
+
+.think-footnote {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--ink-faint);
+  margin-top: 24px;
+}
+
+@media (max-width: 860px) {
+  .think-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .think-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  background: var(--paper-warm);
+  border-top: 0.5px solid rgba(100, 85, 55, 0.14);
+  padding: 60px 0 0;
+  margin: 0 -52px 0 calc(-1 * var(--content-pl));
+  padding-left: var(--content-pl);
+  padding-right: 52px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 52px;
+  border-bottom: 0.5px solid rgba(100, 85, 55, 0.12);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-thought {
+  font-family: 'Caveat', cursive;
+  font-size: 17px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-mid);
+}
+
+.botanical-footer {
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
+.footer-quote-col {
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.footer-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.footer-cite {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-faint);
+  margin-top: 10px;
+  letter-spacing: 0.04em;
+}
+
+/* "care" word with oval */
+.care-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.care-oval {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-1deg);
+  width: calc(100% + 18px);
+  height: calc(100% + 14px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.footer-connect-col {
+  padding-top: 4px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-mid);
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--olive);
+}
+
+.footer-link-icon {
+  font-size: 12px;
+  color: var(--ink-faint);
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+/* Footer bar */
+.footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 18px;
+}
+
+.footer-copy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+
+.footer-pg {
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink-faint);
+}
+
+
+/* ============================================================
+   MARGIN NOTES
+   ============================================================ */
+
+.margin-note {
+  position: absolute;
+  left: -70px;
+  width: 58px;
+  text-align: right;
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(192, 72, 56, 0.58);
+  line-height: 1.4;
+  pointer-events: none;
+  z-index: 5;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Floating stickies */
+@keyframes floatA {
+  0%, 100% { transform: var(--sticky-rot, rotate(-2.5deg)) translateY(0); }
+  50%       { transform: var(--sticky-rot, rotate(-2.5deg)) translateY(-5px); }
+}
+
+@keyframes floatB {
+  0%, 100% { transform: var(--sticky-rot, rotate(1.8deg)) translateY(0); }
+  50%       { transform: var(--sticky-rot, rotate(1.8deg)) translateY(-7px); }
+}
+
+@keyframes floatC {
+  0%, 100% { transform: var(--sticky-rot, rotate(2.2deg)) translateY(0); }
+  50%       { transform: var(--sticky-rot, rotate(2.2deg)) translateY(-6px); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

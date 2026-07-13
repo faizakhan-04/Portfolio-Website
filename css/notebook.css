@@ -1,0 +1,590 @@
+/* ============================================================
+   Faiza Khan Portfolio — notebook.css
+   Notebook chrome: Spine · Rings · Tabs · Stickies · Tape
+   Polaroid · Torn paper · Botanical · Arrows
+   ============================================================ */
+
+
+/* ============================================================
+   LEFT SPINE — hardbound book style
+   ============================================================ */
+
+.spine {
+  width: var(--spine-w);
+  min-height: 100vh;
+  background: var(--spine);
+  /* Fine linen/fabric texture — very subtle vertical weave lines */
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  /* Shadow cast onto the page — gives the spine dimension */
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.20);
+}
+
+/* Left-edge shadow — depth on the binding edge */
+.spine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.22) 0%,
+    rgba(0, 0, 0, 0.08) 22%,
+    transparent 55%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold/mustard accent line on the right edge — classic hardbound detail */
+.spine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  background: rgba(192, 152, 48, 0.50);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Spine vertical text ── */
+.spine-text {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: 'Caveat', cursive;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  color: rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* ============================================================
+   RIGHT BINDING + TAB NAVIGATION
+   ============================================================
+   .notebook-back-cover — full-height dark olive strip, always
+                  behind tabs. Visible in 10px gaps between tabs,
+                  creating the illusion that the tabs are cut into
+                  a real hardbound book cover.
+   .notebook-tabs — vertically centred container, z-index above
+                  the binding strip.
+   .nb-tab      — individual paper divider cards, flush right.
+                  Active tab matches page colour exactly so it
+                  looks like the page itself has a tab cut-out.
+   ============================================================ */
+
+/* ── Full-height back cover — one continuous notebook binding ── */
+.notebook-back-cover {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  background: #3d4a2e;
+  z-index: 400;
+  pointer-events: none;
+}
+
+/* Page casts a soft shadow onto the left edge of the cover */
+.notebook-back-cover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to right, rgba(0,0,0,0.18), transparent);
+}
+
+/* ── Tab container — vertically centred, flush right ── */
+.notebook-tabs {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;  /* dark cover shows between tabs */
+  z-index: 500;
+}
+
+/* ── Each tab — a paper divider card ── */
+.nb-tab {
+  position: relative;
+  width: 38px;
+  height: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  flex-shrink: 0;
+
+  /* Warm paper — slightly darker/different than the page */
+  background: #e8e3d6;
+  border-radius: 5px 0 0 5px;
+  border: 0.5px solid rgba(100, 85, 55, 0.20);
+  border-right: none;
+  margin-right: 0;
+
+  box-shadow: -2px 1px 6px rgba(0, 0, 0, 0.15);
+
+  transition: background 0.25s ease, width 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Active tab — same colour as the page: looks cut from it */
+.nb-tab.active {
+  background: #faf8f4;
+  width: 42px;
+  box-shadow: -3px 1px 10px rgba(0, 0, 0, 0.18);
+  border-color: rgba(100, 85, 55, 0.12);
+}
+
+/* Hover — slides out slightly, paper warms */
+.nb-tab:hover:not(.active) {
+  background: #f0ebe0;
+  width: 40px;
+}
+
+.nb-tab:hover .nb-tab-label {
+  color: #2e2a1e;
+}
+
+/* Coloured dot */
+.nb-tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5a6e48;
+  flex-shrink: 0;
+}
+
+/* Vertical label */
+.nb-tab-label {
+  font-family: 'Caveat', cursive;
+  font-size: 11px;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #6e6555;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  user-select: none;
+  transition: color 0.25s ease;
+}
+
+.nb-tab.active .nb-tab-label {
+  color: #1e1a10;
+}
+
+/* Tab card pushes forward during page-flip click */
+.nb-tab.tab-lifting {
+  width: 44px !important;
+  box-shadow:
+    -5px 0 16px rgba(0, 0, 0, 0.22),
+    -2px 0 5px  rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* ============================================================
+   STICKY NOTES
+   ============================================================ */
+
+.sticky {
+  position: absolute;
+  padding: 10px 12px 13px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
+  font-family: 'Caveat', cursive;
+  cursor: default;
+  z-index: 4;
+  transition: box-shadow 0.22s ease, z-index 0s;
+}
+
+.sticky:hover {
+  box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+}
+
+/* Colour variants */
+.sticky-sage    { background: var(--sticky-sage);    width: 132px; }
+.sticky-yellow  { background: var(--sticky-yellow);  width: 142px; }
+.sticky-pink    { background: var(--sticky-pink);    width: 138px; }
+.sticky-cream   { background: var(--sticky-cream);   width: 136px; }
+.sticky-peach   { background: var(--sticky-peach);   width: 130px; }
+.sticky-blue    { background: var(--sticky-blue);    width: 128px; }
+
+/* Sticky label */
+.sticky-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 5px;
+  color: var(--ink);
+}
+
+/* Sticky body text */
+.sticky-body {
+  font-size: 13px;
+  line-height: 1.42;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+/* Positioned stickies in hero collage — more rotation, more overlap */
+.sticky-observe    { top: 162px; left: 6px;   --sticky-rot: rotate(-3.8deg); animation: floatA 7s ease-in-out infinite; }
+.sticky-pattern    { top: 150px; left: 176px; --sticky-rot: rotate(3.2deg);  animation: floatB 9s ease-in-out 1.2s infinite; }
+.sticky-insight    { top: 320px; left: 4px;   --sticky-rot: rotate(3.6deg);  animation: floatC 8s ease-in-out 0.6s infinite; }
+.sticky-direction  { top: 308px; left: 174px; --sticky-rot: rotate(-2.8deg); animation: floatA 8.5s ease-in-out 2s infinite; }
+
+/* ── Extra hero collage element positions ── */
+.hero-torn  {
+  /* Overlaps the right edge of the polaroid — the paper feels pinned over it */
+  top: 2px;
+  right: -6px;
+  width: 134px;
+  transform: rotate(2.4deg);
+  z-index: 5;
+}
+.hero-venn  {
+  top: 210px;
+  right: 0;
+  width: 148px;
+}
+.hero-notes {
+  top: 476px;
+  right: 2px;
+  transform: rotate(-2.2deg);
+}
+.hero-dubai {
+  top: 506px;
+  left: 4px;
+  max-width: 160px;
+}
+
+
+/* ============================================================
+   TAPE STRIPS
+   ============================================================ */
+
+.tape {
+  position: absolute;
+  height: 16px;
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Tape on stickies — default centered at top */
+.tape-on-sticky {
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Tape colour variants */
+.tape-default { background: var(--tape-default); }
+.tape-green   { background: var(--tape-green); }
+.tape-blue    { background: var(--tape-blue); }
+.tape-pink    { background: var(--tape-pink); }
+
+
+/* ============================================================
+   POLAROID PHOTO FRAMES
+   ============================================================ */
+
+.polaroid {
+  position: absolute;
+  z-index: 3;
+}
+
+.polaroid-frame {
+  background: #fff;
+  padding: 10px 10px 30px;
+  box-shadow: var(--sh-m);
+}
+
+.polaroid-img {
+  width: 128px;
+  height: 112px;
+  overflow: hidden;
+  background: var(--paper-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polaroid-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  background: #e8ddd0;
+}
+
+.photo-placeholder span {
+  font-size: 28px;
+}
+
+.photo-placeholder small {
+  font-family: 'Caveat', cursive;
+  font-size: 10px;
+  color: var(--ink-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Polaroid caption */
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-faint);
+  text-align: center;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* Hero polaroid position — sits above stickies, bottom edge overlaps their tops */
+.hero-polaroid {
+  top: 10px;
+  left: 82px;
+  z-index: 6;
+}
+
+/* Cafe photo: use real image if available */
+.polaroid-cafe {
+  background: #c8b8a0;
+}
+
+.polaroid-cafe img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   TORN PAPER FRAGMENTS
+   ============================================================ */
+
+.torn-paper {
+  position: absolute;
+  background: var(--sticky-white);
+  padding: 14px 16px 16px;
+  box-shadow: var(--sh-s);
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-mid);
+  z-index: 4;
+}
+
+.torn-paper::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: var(--sticky-white);
+  clip-path: polygon(
+    0% 100%, 2% 30%, 4% 80%, 7% 20%, 10% 75%,
+    13% 25%, 16% 85%, 19% 15%, 22% 70%, 25% 35%,
+    28% 90%, 31% 10%, 34% 65%, 37% 30%, 40% 80%,
+    43% 20%, 46% 60%, 49% 40%, 52% 85%, 55% 15%,
+    58% 70%, 61% 30%, 64% 80%, 67% 20%, 70% 65%,
+    73% 35%, 76% 90%, 79% 10%, 82% 70%, 85% 30%,
+    88% 80%, 91% 15%, 94% 65%, 97% 35%, 100% 55%,
+    100% 100%
+  );
+}
+
+/* Paperclip decoration */
+.paperclip {
+  position: absolute;
+  top: -22px;
+  right: 14px;
+  width: 14px;
+  height: 28px;
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   VENN DIAGRAM (hand-drawn sketch)
+   ============================================================ */
+
+.venn-container {
+  position: absolute;
+  z-index: 3;
+}
+
+.venn-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 11px;
+  color: var(--ink-faint);
+  text-align: center;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+
+/* ============================================================
+   NOTES TO SELF CARD
+   ============================================================ */
+
+.notes-card {
+  position: absolute;
+  background: var(--sticky-cream);
+  padding: 12px 14px 14px;
+  box-shadow: var(--sh-s);
+  z-index: 4;
+  width: 132px;
+}
+
+.notes-card-title {
+  font-family: 'Caveat', cursive;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-mid);
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.notes-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notes-card ul li {
+  font-family: 'Caveat', cursive;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  padding-left: 10px;
+  position: relative;
+}
+
+.notes-card ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--olive);
+}
+
+
+/* ============================================================
+   DUBAI NOTE
+   ============================================================ */
+
+.dubai-note {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   PAGE FLIP TRANSITION
+   Spine (.spine) and tabs (.tab-nav) are position:fixed and
+   sit above the .page stacking context — they never move.
+   Only .page participates in the 3D flip.
+   perspective() is embedded in the transform so no parent
+   change is needed (avoids containing-block issues with fixed
+   children).
+   ============================================================ */
+
+/* ── Keyframes ── */
+
+@keyframes pageFlipOut {
+  0%   { transform: perspective(1800px) rotateY(0deg);   opacity: 1; }
+  100% { transform: perspective(1800px) rotateY(-90deg); opacity: 0; }
+}
+
+/* ── Class applied by JS on navigation ── */
+
+.page-flip-out {
+  animation: pageFlipOut 0.62s cubic-bezier(0.4, 0, 1, 1) forwards;
+  transform-origin: left center;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* ── Shadow overlay that sweeps across as the page turns ── */
+
+.page-flip-shadow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background: linear-gradient(
+    to left,
+    rgba(30, 26, 16, 0.22) 0%,
+    rgba(30, 26, 16, 0.08) 42%,
+    transparent 72%
+  );
+  animation: pageShadowSweep 0.62s ease forwards;
+}
+
+@keyframes pageShadowSweep {
+  0%   { opacity: 0; }
+  28%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ── Reduced-motion: replace 3D flip with a simple cross-fade ── */
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes pageFlipOut {
+    0%   { opacity: 1; transform: none; }
+    100% { opacity: 0; transform: none; }
+  }
+
+  .page-flip-shadow { display: none; }
+}

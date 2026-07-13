@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StraySafe: Designing an animal-centered service system &mdash; case study by Faiza Khan.">
+  <title>StraySafe &mdash; Faiza Khan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/notebook.css">
+  <link rel="stylesheet" href="../css/straysafe.css">
+  <link rel="stylesheet" href="../css/chat.css">
+</head>
+
+<body>
+<div class="notebook-wrapper">
+
+  <!-- ═══════════════════════════════════════════
+       LEFT SPINE
+  ═══════════════════════════════════════════ -->
+  <aside class="spine" aria-hidden="true">
+    <span class="spine-text">OBSERVE &mdash; UNDERSTAND &mdash; MAKE SENSE &mdash; DESIGN</span>
+  </aside>
+
+
+  <!-- ═══════════════════════════════════════════
+       MAIN PAGE
+  ═══════════════════════════════════════════ -->
+  <main class="page">
+
+    <!-- ── Navbar ── -->
+    <header class="navbar">
+      <a href="../index.html" class="nav-logo" aria-label="Faiza Khan home">
+        faiza.<span class="nav-logo-dot" aria-hidden="true"></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html#work"  class="nav-link">Work</a>
+        <a href="about.html"          class="nav-link">About</a>
+        <a href="contact.html"        class="nav-link">Contact</a>
+        <span class="nav-end-dot" aria-hidden="true"></span>
+      </nav>
+    </header>
+
+    <div class="page-content">
+
+      <!-- Back nav -->
+      <div class="cs-back-nav">
+        <a href="../index.html#work" class="cs-back-link">&larr; Back to all projects</a>
+      </div>
+
+
+      <!-- ═══════════════════════════════════════════
+           HERO
+      ═══════════════════════════════════════════ -->
+      <section class="cs-hero" id="overview" aria-labelledby="cs-title">
+
+        <!-- Top bar: type tags + published badge -->
+        <div class="cs-hero-bar">
+          <div class="cs-type-tags">
+            <span class="cs-type-tag">Service Design</span>
+            <span class="cs-type-tag">User Research</span>
+            <span class="cs-type-tag">Systems Thinking</span>
+          </div>
+          <div class="cs-published-badge" aria-label="Published at ServDes'25, IIT Hyderabad">
+            <div class="tape tape-default"
+                 style="position:absolute; top:-8px; left:50%;
+                        transform:translateX(-50%) rotate(-1.5deg);
+                        width:38px; height:14px;"
+                 aria-hidden="true"></div>
+            <span class="cs-published-badge-title">Published Paper</span>
+            <span class="cs-published-badge-sub">ServDes'25 &middot; IIT Hyderabad</span>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="cs-headline" id="cs-title">
+          Designing a service for a beneficiary who can't be interviewed, observed, or consulted.
+        </h1>
+
+        <!-- Meta -->
+        <div class="cs-meta-row" aria-label="Project details">
+          <span class="cs-meta-item">2022</span>
+          <span class="cs-meta-item">Mumbai</span>
+          <span class="cs-meta-item">Independent Research</span>
+          <span class="cs-meta-item">6 months</span>
+          <span class="cs-meta-item">UX Researcher &amp; Service Designer</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="cs-stats" aria-label="Research statistics">
+          <div class="cs-stat">
+            <span class="cs-stat-num">18</span>
+            <span class="cs-stat-label">Stakeholder Interviews</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">6</span>
+            <span class="cs-stat-label">NGO Site Visits</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">4</span>
+            <span class="cs-stat-label">Key Insights Identified</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">20</span>
+            <span class="cs-stat-label">Concept Testing Participants</span>
+          </div>
+        </div>
+
+        <!-- Key insight &mdash; torn paper fragment -->
+        <div class="cs-key-insight" role="note" aria-label="Key insight">
+          <div class="tape tape-default"
+               style="position:absolute; top:-8px; left:32px;
+                      transform:rotate(-1deg);
+                      width:40px; height:14px;"
+               aria-hidden="true"></div>
+          "The system doesn't fail within services.
+          It fails at the transitions between them."
+        </div>
+
+      </section><!-- .cs-hero -->
+
+
+      <!-- ═══════════════════════════════════════════
+           TWO-COLUMN: SIDEBAR + CONTENT
+      ═══════════════════════════════════════════ -->
+      <div class="cs-wrapper">
+
+        <!-- ── STICKY SIDEBAR NAV ── -->
+        <aside class="cs-sidebar" aria-label="Case study sections">
+          <div class="cs-sidebar-sticky">
+            <span class="cs-nav-eyebrow">On this page</span>
+            <nav class="cs-nav">
+
+              <a class="cs-nav-link active" href="#overview">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">01</span>
+                  <span class="cs-nav-name">Overview</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#challenge">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">02</span>
+                  <span class="cs-nav-name">The Challenge</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#lens">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">03</span>
+                  <span class="cs-nav-name">Design Lens</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#research">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">04</span>
+                  <span class="cs-nav-name">Research</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#synthesis">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">05</span>
+                  <span class="cs-nav-name">Synthesis</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#solution">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">06</span>
+                  <span class="cs-nav-name">The Solution</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#impact">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">07</span>
+                  <span class="cs-nav-name">Impact</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#reflection">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">08</span>
+                  <span class="cs-nav-name">Reflection</span>
+                </span>
+              </a>
+
+            </nav>
+          </div>
+        </aside>
+
+        <!-- ── MAIN CONTENT ── -->
+        <div class="cs-main">
+
+          <div class="cs-tldr">
+            <span class="cs-tldr-label">Overview</span>
+            <p class="cs-tldr-text">India has 80 million stray animals and a care ecosystem held together by individual volunteers and under-resourced NGOs. I spent 18 interviews and 6 site visits mapping where — and why — it fails, then designed a 6-level coordinated service system in response. This research was accepted and presented at ServDes'25, one of service design's leading academic conferences, hosted at IIT Hyderabad in October 2025.</p>
+          </div>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 1: THE STARTING POINT / OVERVIEW
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="challenge" aria-labelledby="challenge-h">
+
+            <span class="eyebrow">The Starting Point</span>
+            <h2 class="cs-section-heading" id="challenge-h">A small moment. A big system.</h2>
+
+            <p class="cs-body">
+              This project started with a small, personal moment.
+            </p>
+            <p class="cs-body">
+              During the COVID-19 lockdown, I started feeding stray cats in my area.
+              One cat in particular &mdash; hungry, waiting at the same spot every day &mdash;
+              made something click.
+            </p>
+            <p class="cs-body">
+              What started as a simple act of care quickly exposed gaps in how stray
+              animal support actually works.
+            </p>
+            <p class="cs-body">I began noticing patterns:</p>
+            <ul class="cs-list">
+              <li>Injured animals with nowhere to go</li>
+              <li>Volunteers trying to help, but overwhelmed</li>
+              <li>NGOs existed, but were difficult to access</li>
+            </ul>
+            <p class="cs-body">
+              It didn't feel like a lack of effort.
+              It felt like something else was missing.
+            </p>
+            <p class="cs-body">That observation became the foundation for this project.</p>
+
+            <p class="cs-body">That personal observation is what sent me looking for the research &mdash; and there wasn't much of it.</p>
+
+            <p class="cs-body">The solution that took shape by the end wasn't a single service, but a layered system &mdash; the sections ahead trace how each level came together.</p>
+
+            <!-- Research problem sub-section -->
+            <h3 class="cs-subsection-heading">What everyone was measuring &mdash; and what no one was</h3>
+
+            <p class="cs-body">
+              Most existing research focused on population control &mdash; sterilization programs,
+              trap-neuter-return, euthanasia practices. What was almost entirely absent was
+              any understanding of the ecosystem as a whole.
+            </p>
+
+            <p class="cs-body">Three specific gaps shaped my research direction:</p>
+
+            <div class="cs-group-block">
+              <p class="cs-group-title">Individual caregivers were invisible</p>
+              <p class="cs-group-desc">Independent rescuers and feeders form the backbone of
+              daily stray care in Indian cities. Their role, constraints, and behaviors were
+              barely documented.</p>
+            </div>
+            <div class="cs-group-block">
+              <p class="cs-group-title">Western frameworks don't translate</p>
+              <p class="cs-group-desc">Most studies drew from European or American contexts
+              with formal animal control systems and high NGO density. India's ecosystem is
+              informal, community-driven, and structurally different.</p>
+            </div>
+
+            <!-- Context comparison visual -->
+            <div class="cs-context-compare">
+              <div class="cs-context-panel cs-context-panel--light">
+                <span class="cs-context-label">Western Context</span>
+                <span class="cs-context-num">0</span>
+                <span class="cs-context-sub">stray animals in the Netherlands</span>
+                <hr class="cs-context-rule">
+                <span class="cs-context-detail">Formal animal control systems. High NGO density. Dense literature base.</span>
+              </div>
+              <div class="cs-context-vs" aria-hidden="true">vs</div>
+              <div class="cs-context-panel cs-context-panel--dark">
+                <span class="cs-context-label">Indian Context</span>
+                <span class="cs-context-num">80M</span>
+                <span class="cs-context-sub">stray animals in India</span>
+                <hr class="cs-context-rule">
+                <span class="cs-context-detail">Informal, community-driven ecosystem. Structurally different. Almost no research base.</span>
+              </div>
+            </div>
+            <p class="cs-context-caption">"The Netherlands has zero stray animals. India has 80 million."</p>
+
+            <div class="cs-group-block">
+              <p class="cs-group-title">Nobody had mapped how the pieces connect</p>
+              <p class="cs-group-desc">Existing studies addressed isolated touchpoints &mdash; a
+              sterilization program here, a shelter model there. No one had asked how they
+              connect, or where and why they fail to.</p>
+            </div>
+
+            <p class="cs-body">This shifted my research question from:</p>
+            <blockquote class="pull-quote" style="max-width:100%; margin-top:20px;">
+              From "How do we improve services?" to "Why does the existing system fail &mdash;
+              and where, exactly, does it break?"
+            </blockquote>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               DESIGN LENS
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="lens" aria-labelledby="lens-h">
+
+            <span class="eyebrow">Design Lens</span>
+            <h2 class="cs-section-heading" id="lens-h">Who speaks for the beneficiary?</h2>
+
+            <p class="cs-body">
+              Service design is conventionally human-centered. Every framework assumes the
+              beneficiary can tell you something &mdash; through interviews, observations,
+              co-design sessions. This project introduced a complication those frameworks
+              don't fully account for.
+            </p>
+            <p class="cs-body">
+              Stray animals are the primary beneficiaries of the system &mdash; but they cannot
+              communicate their needs, participate in research, or advocate for themselves.
+              They experience the system's failures most directly, yet have no voice in how
+              it's designed.
+            </p>
+            <p class="cs-body">
+              This is a problem existing animal-centered design literature had started to name,
+              but rarely applied in practice: how do you design <em><strong>for</strong></em>
+              someone you cannot design <em><strong>with</strong></em>?
+            </p>
+            <p class="cs-body">
+              My approach was to treat the people who interact with animals daily &mdash;
+              feeders, rescuers, veterinarians, NGO workers &mdash; as human advocates for the
+              animal's experience. They became my research participants, but every question I
+              asked was oriented toward what the animal encounters, what the animal needs, and
+              where the animal falls through the system, not just the human's own experience.
+            </p>
+
+            <div class="ia-response" role="note">
+              <span class="ia-response-label">Contribution</span>
+              <p class="ia-response-text">Applying this lens to a completely undocumented
+              context &mdash; India's informal, fragmented stray care ecosystem &mdash; became the
+              central contribution of the published paper.</p>
+            </div>
+
+            <p class="cs-artifact-caption" style="margin: 8px 0 20px;">Building on animal-centered design literature (Mancini, 2011; van der Linden, 2022)</p>
+
+            <!-- Central theoretical question &mdash; dark block -->
+            <div class="cs-theory-block" role="note">
+              <p>"What happens when the primary beneficiary cannot speak for itself?"</p>
+              <p class="cs-body">&mdash; the central question, and the starting point for animal-centered service design</p>
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 4: RESEARCH APPROACH
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="research" aria-labelledby="research-h">
+
+            <span class="eyebrow">Research</span>
+            <h2 class="cs-section-heading" id="research-h">A qualitative, immersive approach</h2>
+
+            <p class="cs-body">
+              I designed a qualitative, immersive research approach &mdash; deliberately choosing
+              depth over breadth.
+            </p>
+
+            <h3 class="cs-subsection-heading">Stakeholder Mapping</h3>
+            <p class="cs-body">
+              Before any fieldwork, I mapped the full stakeholder landscape &mdash; avoiding
+              over-indexing on the most visible actors (NGOs) at the expense of the less
+              visible but equally important ones: individual feeders, informal rescue groups,
+              residential communities.
+            </p>
+
+            <figure class="cs-artifact-2col">
+              <div class="cs-artifact-row">
+                <img src="../Assets/Images/Photos/StraySafe/Stakeholdermap1.png"
+                     alt="Initial stakeholder mapping — actors in the ecosystem"
+                     class="cs-artifact-img">
+                <img src="../Assets/Images/Photos/StraySafe/Stakeholdermap2.png"
+                     alt="Stakeholder influence and interest mapping"
+                     class="cs-artifact-img">
+              </div>
+              <figcaption class="cs-artifact-caption">Left: ecosystem actors mapped. Right: influence and interest analysis.</figcaption>
+            </figure>
+
+            <h3 class="cs-subsection-heading">Semi-Structured Interviews &mdash; 18 participants</h3>
+            <p class="cs-body">Divided into three groups:</p>
+
+            <div class="cs-group-block">
+              <p class="cs-group-title">Group 1 &mdash; Independent caregivers</p>
+              <p class="cs-group-desc">Helping animals entirely on their own, with personal funds,
+              without team or organizational support. High motivation. Zero infrastructure.
+              Invisible to the wider system.</p>
+            </div>
+            <div class="cs-group-block">
+              <p class="cs-group-title">Group 2 &mdash; Informal rescue groups</p>
+              <p class="cs-group-desc">Small, community-driven collectives juggling full-time
+              jobs alongside running what were essentially micro-NGOs. No legal standing, no
+              reliable infrastructure, no safety net.</p>
+            </div>
+            <div class="cs-group-block">
+              <p class="cs-group-title">Group 3 &mdash; NGO-affiliated workers</p>
+              <p class="cs-group-desc">People who gave me the system-level view &mdash; how
+              organizations make decisions, where resources go, what they can and cannot do.</p>
+            </div>
+
+            <figure class="cs-artifact-2col">
+              <div class="cs-artifact-row">
+                <img src="../Assets/Images/Photos/StraySafe/interview 1.png"
+                     alt="Interview session with a stakeholder"
+                     class="cs-artifact-img">
+                <img src="../Assets/Images/Photos/StraySafe/Interview 2.png"
+                     alt="Interview session with a stakeholder"
+                     class="cs-artifact-img">
+              </div>
+              <figcaption class="cs-artifact-caption">18 participants across 3 stakeholder groups</figcaption>
+            </figure>
+
+            <h3 class="cs-subsection-heading">NGO Site Visits &mdash; 5 organizations</h3>
+            <div class="cs-ngo-list" aria-label="NGOs visited">
+              <span class="cs-ngo-tag">World for All</span>
+              <span class="cs-ngo-tag">Feline Foundation</span>
+              <span class="cs-ngo-tag">BSPCA</span>
+              <span class="cs-ngo-tag">Utkarsh Foundation</span>
+              <span class="cs-ngo-tag">IDA</span>
+            </div>
+            <p class="cs-body">
+              At Feline Foundation, I conducted a week-long shadowing immersion &mdash; arriving each
+              morning, observing how cases came in, how decisions were made, where formal
+              processes broke down, and informal ones filled the gap.
+            </p>
+            <p class="cs-body">
+              This is where I learned that much of what makes an NGO actually function is
+              invisible: the informal networks, the personal relationships, the workarounds
+              built over years of under-resourcing.
+            </p>
+
+            <figure class="cs-artifact">
+              <img src="../Assets/Images/Photos/StraySafe/NGO COmparison Table.png"
+                   alt="Comparative analysis across 5 NGOs visited"
+                   class="cs-artifact-img">
+              <figcaption class="cs-artifact-caption">Comparative analysis across 5 NGOs — services offered, capacity, gaps</figcaption>
+            </figure>
+
+            <p class="cs-body">
+              Between them, these six NGOs cover almost every service an animal might need.
+              But no single one offers continuity across the full journey &mdash; which is
+              exactly where animals fall through.
+            </p>
+
+            <!-- The Unplanned Test -->
+            <div class="bodystorm-callout" role="note" aria-label="The Unplanned Test">
+              <p class="cs-body">
+                One of the most significant research moments was entirely unplanned.
+                This wasn't a planned research method &mdash; it happened by accident, and it
+                taught me more than any interview had.
+              </p>
+              <p class="cs-body">
+                I found an injured kitten and tried to navigate the system to get it help.
+                What followed was a firsthand experience of every breakdown I had been hearing
+                about in interviews, compressed into a single afternoon:
+              </p>
+              <ul class="cs-list">
+                <li>No clear information on which NGOs were nearby</li>
+                <li>The closest NGO had closed &mdash; operational hours were over</li>
+                <li>No ambulance service accessible</li>
+                <li>No guidance on how to safely transport a distressed animal</li>
+                <li>The vet diagnosed the kitten as needing ongoing care, but no foster
+                    placement was available</li>
+              </ul>
+              <p class="cs-body">
+                The kitten survived. But the experience made viscerally clear what interviews
+                could only describe: the system doesn't just have gaps. For someone navigating
+                it alone in an emergency, it is effectively inaccessible.
+              </p>
+              <figure class="cs-artifact" style="margin:16px 0 20px;">
+                <img src="../Assets/Images/Photos/StraySafe/Bodystorming.png"
+                     alt="Bodystorming: navigating the system in real time"
+                     class="cs-artifact-img">
+                <figcaption class="cs-artifact-caption">Bodystorming: navigating the system in real time</figcaption>
+              </figure>
+
+              <p class="bodystorm-callout-footer">
+                (That kitten eventually became part of my family.)
+              </p>
+            </div>
+
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 5: KEY INSIGHTS
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="synthesis" aria-labelledby="synthesis-h">
+
+            <span class="eyebrow">Synthesis</span>
+
+            <p class="cs-body">
+              Eighteen interviews. Five site visits. Weeks of synthesis. These four insights
+              shaped everything that followed.
+            </p>
+            <p class="cs-body">
+              I started by mapping the full care journey &mdash; tracing every touchpoint from
+              the moment someone discovers an injured animal to what (rarely) comes after:
+              recovery, fostering, adoption. The map made the failure points impossible to ignore.
+            </p>
+
+            <h3 class="cs-subsection-heading">Mapping the Care Journey</h3>
+
+            <figure class="cs-artifact">
+              <a href="https://miro.com/app/board/o9J_ly0IQQU=/?moveToWidget=3458764520066878401&cot=14"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="cs-artifact-link"
+                 aria-label="Open full journey map on Miro (opens in new tab)">
+                <img src="../Assets/Images/Photos/StraySafe/Jounrey Map.jpg"
+                     alt="Care journey map — from discovery to long-term care"
+                     class="cs-artifact-img">
+              </a>
+              <figcaption class="cs-artifact-caption">Care journey map &mdash; from discovery to long-term care</figcaption>
+              <p class="cs-artifact-caption cs-artifact-caption--link-hint">This shows a condensed view &mdash; click the image to explore the full journey map on Miro</p>
+            </figure>
+
+            <figure class="cs-artifact">
+              <img src="../Assets/Images/Photos/StraySafe/Flowchart.png"
+                   alt="System flowchart — tracing the care journey from discovery to long-term outcome"
+                   class="cs-artifact-img">
+              <figcaption class="cs-artifact-caption">System flowchart &mdash; tracing the care journey from discovery to long-term outcome</figcaption>
+            </figure>
+
+            <h2 class="cs-section-heading" id="synthesis-h">Four key insights</h2>
+
+            <div class="insights-accordion" aria-label="Key research insights">
+
+              <!-- Insight 01 -->
+              <div class="ia-row">
+                <button class="ia-trigger" aria-expanded="false" aria-controls="insight-detail-01">
+                  <span class="ia-num">01</span>
+                  <span class="ia-quote">"The system doesn't fail within services. It fails at the transitions between them."</span>
+                  <span class="ia-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="ia-detail" id="insight-detail-01" hidden>
+                  <p class="ia-detail-body">Every individual service — feeding, rescue, medical treatment, fostering — often functions adequately on its own. The failure is structural: the handoffs between services are unmapped, unsupported, and where animals most consistently fall through. No one owns the gap between rescue and treatment. No one coordinates the move from treatment to fostering.</p>
+                  <div class="ia-response">
+                    <span class="ia-response-label">Design response</span>
+                    <p class="ia-response-text">The StraySafe system is built around transitions, not individual services. Each of the 6 levels is explicitly designed to connect to the next, with coordination infrastructure at every handoff point.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insight 02 -->
+              <div class="ia-row">
+                <button class="ia-trigger" aria-expanded="false" aria-controls="insight-detail-02">
+                  <span class="ia-num">02</span>
+                  <span class="ia-quote">"Care exists in abundance. Coordination does not."</span>
+                  <span class="ia-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="ia-detail" id="insight-detail-02" hidden>
+                  <p class="ia-detail-body">Across every interview, I found people actively contributing — feeders, rescuers, veterinarians, NGO workers — often at personal cost. The failure is not motivational. Effort exists. The infrastructure to connect that effort does not. People are doing the work in parallel, not together.</p>
+                  <div class="ia-response">
+                    <span class="ia-response-label">Design response</span>
+                    <p class="ia-response-text">Rather than creating new services, the system creates a coordination layer — a shared infrastructure that makes existing care efforts visible and connectable to each other.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insight 03 -->
+              <div class="ia-row">
+                <button class="ia-trigger" aria-expanded="false" aria-controls="insight-detail-03">
+                  <span class="ia-num">03</span>
+                  <span class="ia-quote">"Willingness is not the bottleneck. Navigability is."</span>
+                  <span class="ia-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="ia-detail" id="insight-detail-03" hidden>
+                  <p class="ia-detail-body">Many people want to help but don't know how. The system is not only fragmented — it is illegible to anyone trying to enter it. There is no clear door in. When people can't find one, they don't knock anyway. The cost of confusion is lost participation.</p>
+                  <div class="ia-response">
+                    <span class="ia-response-label">Design response</span>
+                    <p class="ia-response-text">Level 1 (Awareness & Community Building) is designed as an explicit entry point — a legible first step that turns confused bystanders into participants with a clear path forward.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insight 04 -->
+              <div class="ia-row">
+                <button class="ia-trigger" aria-expanded="false" aria-controls="insight-detail-04">
+                  <span class="ia-num">04</span>
+                  <span class="ia-quote">"I came in expecting to find missing services. What I found was a system with parts but no connections."</span>
+                  <span class="ia-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="ia-detail" id="insight-detail-04" hidden>
+                  <p class="ia-detail-body">The most significant research realization was that the problem wasn't absence — it was disconnection. The ecosystem already has feeders, rescuers, NGOs, vets, and willing residents. What it lacks is the connective tissue between them. This completely changed what the solution needed to be.</p>
+                  <div class="ia-response">
+                    <span class="ia-response-label">Design response</span>
+                    <p class="ia-response-text">StraySafe is not a product. It is a system. The six levels are not independent services — they are a layered architecture where each level depends on and feeds into the next.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 6: THE SOLUTION &mdash; six service levels
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="solution" aria-labelledby="solution-h">
+
+            <span class="eyebrow">The Solution</span>
+            <h2 class="cs-section-heading" id="solution-h">A layered service system</h2>
+
+            <p class="cs-body">
+              Stray Safe is not a single product or service. It is a system designed to
+              connect the existing ecosystem &mdash; enabling different stakeholders to participate
+              at different levels while keeping all efforts coordinated.
+            </p>
+
+            <div class="service-levels" aria-label="Six service levels">
+
+              <div class="level-card reveal" style="transition-delay:0.08s;">
+                <div class="level-accent" style="background:#5a6e48;" aria-hidden="true"></div>
+                <div class="level-body">
+                  <span class="level-num">Level 01</span>
+                  <h3 class="level-title">Awareness &amp; Community Building</h3>
+                  <span class="level-gap">Gap addressed: navigability</span>
+                  <div class="level-desc-row">
+                    <p class="level-desc">Engagement camps at schools, colleges, and
+                    corporate offices. The door into the system for people who don't
+                    know where to start.</p>
+                    <button class="storyboard-toggle">+</button>
+                  </div>
+                  <figure class="storyboard-figure" hidden>
+                    <img src="../Assets/Images/Photos/StraySafe/Storyboard-1.png"
+                         alt="Storyboard — Awareness &amp; Community Building"
+                         class="storyboard-img">
+                    <figcaption class="storyboard-caption">storyboard &mdash; how it works in practice</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="level-card reveal" style="transition-delay:0.16s;">
+                <div class="level-accent" style="background:#b85838;" aria-hidden="true"></div>
+                <div class="level-body">
+                  <span class="level-num">Level 02</span>
+                  <h3 class="level-title">Mobile Vet Clinic</h3>
+                  <span class="level-gap">Gap addressed: emergency medical access</span>
+                  <div class="level-desc-row">
+                    <p class="level-desc">On-call mobile veterinary clinic, bookable via
+                    phone or app, with real-time location tracking. The clinic comes to
+                    the animal.</p>
+                    <button class="storyboard-toggle">+</button>
+                  </div>
+                  <figure class="storyboard-figure" hidden>
+                    <img src="../Assets/Images/Photos/StraySafe/Storyboard-2.png"
+                         alt="Storyboard — Mobile Vet Clinic"
+                         class="storyboard-img">
+                    <figcaption class="storyboard-caption">storyboard &mdash; how it works in practice</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="level-card reveal" style="transition-delay:0.24s;">
+                <div class="level-accent" style="background:#4a7a88;" aria-hidden="true"></div>
+                <div class="level-body">
+                  <span class="level-num">Level 03</span>
+                  <h3 class="level-title">Sterilization &amp; Vaccination</h3>
+                  <span class="level-gap">Gap addressed: population management</span>
+                  <div class="level-desc-row">
+                    <p class="level-desc">Neighbourhood-based model where feeders and
+                    residents coordinate with NGOs to identify, book, and track
+                    unsterilized animals in their area.</p>
+                    <button class="storyboard-toggle">+</button>
+                  </div>
+                  <figure class="storyboard-figure" hidden>
+                    <img src="../Assets/Images/Photos/StraySafe/Storyboard-3.png"
+                         alt="Storyboard — Sterilization &amp; Vaccination"
+                         class="storyboard-img">
+                    <figcaption class="storyboard-caption">storyboard &mdash; how it works in practice</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="level-card reveal" style="transition-delay:0.32s;">
+                <div class="level-accent" style="background:#7a9868;" aria-hidden="true"></div>
+                <div class="level-body">
+                  <span class="level-num">Level 04</span>
+                  <h3 class="level-title">Foster Network</h3>
+                  <span class="level-gap">Gap addressed: treatment-to-recovery transition</span>
+                  <div class="level-desc-row">
+                    <p class="level-desc">A structured network connecting rescued animals
+                    with registered foster caregivers nearby. Directly addresses the gap
+                    the bodystorming experience made personal: after treatment, there is
+                    nowhere for an animal to go.</p>
+                    <button class="storyboard-toggle">+</button>
+                  </div>
+                  <figure class="storyboard-figure" hidden>
+                    <img src="../Assets/Images/Photos/StraySafe/Storyboard-4.png"
+                         alt="Storyboard — Foster Network"
+                         class="storyboard-img">
+                    <figcaption class="storyboard-caption">storyboard &mdash; how it works in practice</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="level-card reveal" style="transition-delay:0.40s;">
+                <div class="level-accent" style="background:#c09830;" aria-hidden="true"></div>
+                <div class="level-body">
+                  <span class="level-num">Level 05</span>
+                  <h3 class="level-title">Adoption Platform</h3>
+                  <span class="level-gap">Gap addressed: long-term outcomes</span>
+                  <div class="level-desc-row">
+                    <p class="level-desc">A centralized platform pooling listings from
+                    NGOs, rescue groups, and independent caregivers. Make adopting a
+                    stray the path of least resistance.</p>
+                    <button class="storyboard-toggle">+</button>
+                  </div>
+                  <figure class="storyboard-figure" hidden>
+                    <img src="../Assets/Images/Photos/StraySafe/Storyboard-5.png"
+                         alt="Storyboard — Adoption Platform"
+                         class="storyboard-img">
+                    <figcaption class="storyboard-caption">storyboard &mdash; how it works in practice</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="level-card reveal" style="transition-delay:0.48s;">
+                <div class="level-accent" style="background:#8070a8;" aria-hidden="true"></div>
+                <div class="level-body">
+                  <span class="level-num">Level 06</span>
+                  <h3 class="level-title">Society Initiatives</h3>
+                  <span class="level-gap">Gap addressed: community-level integration</span>
+                  <div class="level-desc-row">
+                    <p class="level-desc">For residential communities willing to move from
+                    resistance to participation. Addresses the resistant resident &mdash; not by
+                    arguing against his concerns, but by giving him a structured, supported
+                    way to participate.</p>
+                    <button class="storyboard-toggle">+</button>
+                  </div>
+                  <figure class="storyboard-figure" hidden>
+                    <img src="../Assets/Images/Photos/StraySafe/Storyboard-6.png"
+                         alt="Storyboard — Society Initiatives"
+                         class="storyboard-img">
+                    <figcaption class="storyboard-caption">storyboard &mdash; how it works in practice</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ── Testing the Concept ── -->
+            <div class="cs-testing-block reveal" role="note">
+              <h3 class="cs-subsection-heading">Testing before finalizing</h3>
+
+              <p class="cs-body">Six levels looked good on paper. Before finalizing anything, I needed to know if people would actually use them.</p>
+              <p class="cs-body">I tested the concept with 20 participants across two age groups (22–25 and 40+), using three formats &mdash; in-person sessions, Zoom calls, and written feedback &mdash; to see if the response held up regardless of how people engaged with it.</p>
+
+              <div class="ia-response">
+                <span class="ia-response-label">What held up</span>
+                <p class="ia-response-text">The Mobile Vet Clinic was the clear winner &mdash; even participants who weren't particularly fond of animals supported it, because it removed the hardest part: physically transporting an injured stray. Awareness camps also landed well, including with residents who'd been resistant to feeding strays in their communities &mdash; the gap wasn't willingness, it was information.</p>
+              </div>
+
+              <div class="ia-response ia-response--caution">
+                <span class="ia-response-label">What I got wrong</span>
+                <p class="ia-response-text">I'd originally proposed a first-aid component where community members would administer basic care themselves. Most participants rejected this &mdash; handling an injured, unfamiliar animal felt risky and uncomfortable, even to people who wanted to help. The fix wasn't to drop the idea, but to shift it: supervise and support, rather than personally administer.<br><br>The foster network was liked in concept but confusing in practice &mdash; participants understood why it mattered but couldn't picture how it would actually connect them to a foster. That confusion is exactly what shaped the next step: turning the loosest, most conceptual level into something concrete enough to actually use.</p>
+              </div>
+
+              <div class="ia-response">
+                <span class="ia-response-label">Design response</span>
+                <p class="ia-response-text">Testing surfaced a pattern &mdash; coordination, not intention, was the recurring failure point. That insight shaped the final wireframes: a single website tying all six levels together, so "how do I actually do this" had one clear answer.</p>
+              </div>
+            </div>
+
+            <!-- ── Final Wireframes ── -->
+            <div class="cs-wireframes-block reveal">
+              <h3 class="cs-subsection-heading">The final touchpoint</h3>
+
+              <p class="cs-body">Testing made one thing clear: people needed a single, tangible way in &mdash; not six separate services to figure out individually. I designed a website as that connective layer, where someone could learn about a service, understand why it matters, and access it, all in one place.</p>
+
+              <div class="cs-wireframe-grid">
+                <div class="cs-wireframe-placeholder">
+                  <span class="cs-wireframe-label">Home</span>
+                </div>
+                <div class="cs-wireframe-placeholder">
+                  <span class="cs-wireframe-label">Offerings</span>
+                </div>
+                <div class="cs-wireframe-placeholder">
+                  <span class="cs-wireframe-label">Mobile Clinic</span>
+                </div>
+                <div class="cs-wireframe-placeholder">
+                  <span class="cs-wireframe-label">Adoption</span>
+                </div>
+                <div class="cs-wireframe-placeholder">
+                  <span class="cs-wireframe-label">Society Initiative</span>
+                </div>
+              </div>
+              <p class="cs-artifact-caption">Final wireframes &mdash; shaped directly by what concept testing revealed</p>
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 7: IMPACT
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="impact" aria-labelledby="impact-h">
+
+            <span class="eyebrow">Impact</span>
+            <h2 class="cs-section-heading" id="impact-h">From thesis to published research</h2>
+
+            <div class="cs-footer-cta">
+              <p class="cs-footer-cta-text">
+                This research was presented at the International Service Design Conference,
+                IIT Hyderabad, 2025.
+              </p>
+              <a href="https://dl.designresearchsociety.org/servdes/servdes2025/researchpapers/49/"
+                 class="cs-paper-btn"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Read the published paper on DRS (opens in new tab)">
+                Read the published paper &rarr;
+              </a>
+              <span class="cs-paper-btn-note" aria-hidden="true">opens the DRS archive</span>
+            </div>
+
+            <div class="cs-impact-split">
+              <figure class="cs-impact-img-col">
+                <img src="../Assets/Images/Photos/StraySafe/impact.jpg.jpeg"
+                     alt="Faiza Khan presenting at ServDes'25, IIT Hyderabad"
+                     class="cs-artifact-img">
+                <figcaption class="cs-artifact-caption">ServDes'25 &middot; IIT Hyderabad &middot; October 2025</figcaption>
+              </figure>
+              <div class="cs-impact-text-col">
+                <div class="cs-impact-badge" aria-label="Published at ServDes 2025">
+                  Published at ServDes'25 &mdash; International Service Design Conference &middot; IIT Hyderabad
+                </div>
+                <p class="cs-body">
+                  This project became more than a thesis.
+                </p>
+                <p class="cs-body">
+                  The research was developed into a peer-reviewed paper: <em>"Animal-Centered
+                  Service Design for Stray Animals in India"</em> &mdash; accepted and presented at
+                  ServDes'25, the International Service Design Conference hosted at IIT Hyderabad
+                  in October 2025.
+                </p>
+                <p class="cs-body">
+                  The paper makes a specific theoretical contribution. Service design literature
+                  has long assumed a human beneficiary &mdash; someone who can be interviewed,
+                  observed, included. This research challenges that assumption and proposes a
+                  different operating mode: designing through proxy representation, with
+                  non-human beneficiaries at the centre of inquiry.
+                </p>
+                <p class="cs-body">
+                  It introduces the concept of <em>animal-centered service design</em> &mdash; not as a
+                  fully formed framework, but as a provocation and starting point for a design
+                  approach the field has not yet formalized. The goal is to open a conversation,
+                  not close one.
+                </p>
+                <p class="cs-body">
+                  Beyond the theoretical contribution, the practical implication matters too:
+                  India has approximately 80 million stray animals. The stray care ecosystem
+                  is under-resourced, fragmented, and almost entirely unmapped in design research.
+                  This work begins to change that.
+                </p>
+              </div>
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               SECTION 8: REFLECTION
+          ───────────────────────────────────── -->
+          <section class="cs-section reveal" id="reflection" aria-labelledby="reflection-h">
+
+            <span class="eyebrow">Reflection</span>
+            <h2 class="cs-section-heading" id="reflection-h">What this project taught me</h2>
+
+            <p class="cs-body">
+              This project changed how I think about research problems.
+            </p>
+            <p class="cs-body">
+              I came in expecting to find missing services. What I found instead was a system
+              that had most of its parts &mdash; but none of its connections. That distinction between
+              <em>absence</em> and <em>disconnection</em> became the most important realization
+              of the project. It completely changed what the solution needed to be.
+            </p>
+            <p class="cs-body">
+              The bodystorming moment of finding that kitten &mdash; navigating the broken system
+              alone in real time &mdash; gave me something no amount of interviews could have.
+              The most important research insights in this project came from the moments I
+              didn't plan for. That's something I carry into every project now.
+            </p>
+
+            <div class="reflection-cols" aria-label="Reflection notes">
+
+              <div class="reflection-col" data-label="What I'd do differently">
+                <p class="cs-body">
+                  Build prototypes earlier and get them into real stakeholder hands faster.
+                  Storyboards communicate ideas but don't surface operational friction.
+                </p>
+              </div>
+
+              <div class="reflection-col" data-label="What I'd do next">
+                <p class="cs-body">
+                  Partner with two or three Mumbai NGOs to pilot the care coordination
+                  layer &mdash; specifically the mobile clinic integration and the foster
+                  network. These are the highest-impact and highest-friction points
+                  in the ecosystem.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- ─────────────────────────────────────
+               FOOTER CTA
+          ───────────────────────────────────── -->
+          <!-- Next project -->
+          <a href="nomadology.html" class="cs-next-project" aria-label="Next project: Nomadology">
+            <div class="cs-next-left">
+              <span class="cs-next-label">Next project &rarr;</span>
+              <span class="cs-next-title">Nomadology: Designing a Camping Experience</span>
+            </div>
+            <span class="cs-next-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+        </div><!-- .cs-main -->
+
+      </div><!-- .cs-wrapper -->
+
+
+      <!-- Footer bar -->
+      <footer class="about-footer" aria-label="Footer">
+        <span class="footer-copy">
+          &copy; 2026 Faiza Khan &middot; UX Researcher &amp; Service Designer &middot; Dubai, UAE
+        </span>
+        <span class="footer-pg">pg. 03 / ?? &mdash; still writing &rarr; &#x270F;&#xFE0F;</span>
+      </footer>
+
+    </div><!-- .page-content -->
+
+  </main><!-- .page -->
+
+
+  <!-- ═══════════════════════════════════════════
+       RIGHT TAB NAVIGATION &mdash; Work active
+  ═══════════════════════════════════════════ -->
+  <!-- ── Dark binding strip ── -->
+  <div class="notebook-back-cover" aria-hidden="true"></div>
+
+  <!-- ── Notebook divider tabs ── -->
+  <div class="notebook-tabs" aria-label="Page navigation">
+
+    <a href="../index.html#work" class="nb-tab active" data-page="work" aria-label="Work">
+      <span class="nb-tab-dot" aria-hidden="true"></span>
+      <span class="nb-tab-label">Work</span>
+    </a>
+
+    <a href="about.html" class="nb-tab" data-page="about" aria-label="About">
+      <span class="nb-tab-dot" aria-hidden="true"></span>
+      <span class="nb-tab-label">About</span>
+    </a>
+
+    <a href="contact.html" class="nb-tab" data-page="contact" aria-label="Contact">
+      <span class="nb-tab-dot" aria-hidden="true"></span>
+      <span class="nb-tab-label">Contact</span>
+    </a>
+
+  </div><!-- .notebook-tabs -->
+
+</div><!-- .notebook-wrapper -->
+
+<script src="../js/main.js?v=6"></script>
+
+<script>
+/* Sidebar scrollspy — past / active / future */
+(function () {
+  var ids   = ['overview','challenge','lens','research','synthesis','solution','impact','reflection'];
+  var links = Array.from(document.querySelectorAll('.cs-nav-link'));
+  var secs  = ids.map(function (id) { return document.getElementById(id); });
+
+  function update() {
+    var y = window.scrollY + Math.round(window.innerHeight * 0.30);
+    var active = 0;
+    secs.forEach(function (el, i) { if (el && el.offsetTop <= y) active = i; });
+    links.forEach(function (el, i) {
+      el.classList.toggle('active', i === active);
+      el.classList.toggle('past',   i < active);
+    });
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
+
+<script src="../js/chat.js"></script>
+
+<script>
+/* Insights accordion toggle */
+document.querySelectorAll('.ia-trigger').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    var detail = document.getElementById(this.getAttribute('aria-controls'));
+    if (expanded) {
+      detail.hidden = true;
+    } else {
+      detail.hidden = false;
+    }
+  });
+});
+
+/* Storyboard toggle — whole level-body header is clickable */
+document.querySelectorAll('.level-body').forEach(function(body) {
+  body.addEventListener('click', function(e) {
+    if (e.target.closest('.storyboard-figure')) return;
+    var figure = body.querySelector('.storyboard-figure');
+    var btn = body.querySelector('.storyboard-toggle');
+    if (!figure) return;
+    var hidden = figure.hidden;
+    figure.hidden = !hidden;
+    btn.textContent = hidden ? '−' : '+';
+  });
+});
+</script>
+</body>
+</html>
