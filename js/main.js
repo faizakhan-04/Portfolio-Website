@@ -58,6 +58,41 @@
     });
   }
 
+  /* ── Rail scrollspy — darken whichever tab's section is in view ──
+     Generic across pages: a tab only participates once its data-page
+     value resolves to a real element on the current page (e.g. index.html
+     has #home/#work/#contact but no #about, so "About" is left alone).
+     Pages with no matching sections at all (the case studies) keep
+     whatever static .active class is already in their markup. ────── */
+
+  function initRailScrollspy() {
+    const tabs = document.querySelectorAll('.nb-tab[data-page]');
+    if (!tabs.length) return;
+
+    const pairs = Array.from(tabs)
+      .map((tab) => {
+        const section = document.getElementById(tab.dataset.page);
+        return section ? { tab, section } : null;
+      })
+      .filter(Boolean);
+
+    if (!pairs.length) return;
+
+    function update() {
+      const y = window.scrollY + Math.round(window.innerHeight * 0.30);
+      let activeIndex = 0;
+      pairs.forEach((pair, i) => {
+        if (pair.section.offsetTop <= y) activeIndex = i;
+      });
+      pairs.forEach((pair, i) => {
+        pair.tab.classList.toggle('active', i === activeIndex);
+      });
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
   /* ── Navbar scroll shadow ────────────────────────────────── */
 
   function initNavbarShadow() {
@@ -181,6 +216,7 @@
     initScrollReveal();
     initBeyondOval();
     initTabNav();
+    initRailScrollspy();
     initNavbarShadow();
     initHeroEntry();
     initPageFlip();

@@ -155,12 +155,14 @@
   transition: background 0.25s ease, width 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Active tab — same colour as the page: looks cut from it */
+/* Active tab — a visibly deeper shade of the same warm tan family
+   used across the rail, so the section currently in view reads as
+   clearly selected rather than blending into the page. */
 .nb-tab.active {
-  background: #faf8f4;
+  background: #d1c3a0;
   width: 42px;
   box-shadow: -3px 1px 10px rgba(0, 0, 0, 0.18);
-  border-color: rgba(100, 85, 55, 0.12);
+  border-color: rgba(100, 85, 55, 0.22);
 }
 
 /* Hover — slides out slightly, paper warms */
