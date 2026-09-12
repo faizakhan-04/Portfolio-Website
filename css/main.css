@@ -62,6 +62,12 @@
   --tab-w:     0px;
   --margin-px: 64px;
   --content-pl: 80px;
+  /* The right-side index rail (.notebook-tabs / .notebook-back-cover)
+     is position:fixed and reserves no layout space (--tab-w is 0),
+     so this padding is the only thing keeping page content clear of
+     it — needs to be generous, not just enough to clear its ~48px
+     footprint. */
+  --content-pr: 100px;
 }
 
 /* ── Reset ── */
@@ -127,7 +133,7 @@ img {
 
 /* ── Page content area ── */
 .page-content {
-  padding: 0 56px 0 var(--content-pl);
+  padding: 0 var(--content-pr) 0 var(--content-pl);
   position: relative;
 }
 
@@ -143,7 +149,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 56px 16px var(--content-pl);
+  padding: 16px var(--content-pr) 16px var(--content-pl);
   background: rgba(250, 248, 244, 0.94);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -904,9 +910,9 @@ img {
   background: var(--paper-warm);
   border-top: 0.5px solid rgba(100, 85, 55, 0.14);
   padding: 60px 0 0;
-  margin: 0 -52px 0 calc(-1 * var(--content-pl));
+  margin: 0 calc(-1 * var(--content-pr)) 0 calc(-1 * var(--content-pl));
   padding-left: var(--content-pl);
-  padding-right: 52px;
+  padding-right: var(--content-pr);
 }
 
 .footer-inner {
