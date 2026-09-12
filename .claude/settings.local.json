@@ -6,7 +6,9 @@
       "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\pages\")",
       "mcp__Claude_Preview__preview_start",
       "PowerShell(Test-Path \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\pages\\\\about.html\"; \\(Get-Item \"C:\\\\Users\\\\kamil\\\\Desktop\\\\faiza-portfolio\\\\pages\\\\about.html\"\\).Length)",
-      "Bash(powershell -Command \"Get-ChildItem -Recurse -Filter '*.html' | Select-Object FullName\")"
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -Filter '*.html' | Select-Object FullName\")",
+      "Bash(git commit *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8792/index.html)"
     ]
   }
 }
