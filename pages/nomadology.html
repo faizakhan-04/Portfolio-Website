@@ -128,18 +128,71 @@
       ═══════════════════════════════════════════ -->
       <div class="cs-wrapper">
 
-        <!-- ── LEFT SIDEBAR ── -->
-        <aside class="cs-sidebar" aria-label="Case study navigation">
-          <nav class="cs-nav" aria-label="Page sections">
-            <a href="#brief"       class="cs-nav-link">The Brief</a>
-            <a href="#context"     class="cs-nav-link">Context</a>
-            <a href="#research"    class="cs-nav-link">Research</a>
-            <a href="#key-finding" class="cs-nav-link">Key Finding</a>
-            <a href="#insights"    class="cs-nav-link">Insights</a>
-            <a href="#solution"    class="cs-nav-link">The Solution</a>
-            <a href="#testing"     class="cs-nav-link">Testing</a>
-            <a href="#reflection"  class="cs-nav-link">Reflection</a>
-          </nav>
+        <!-- ── STICKY SIDEBAR NAV ── -->
+        <aside class="cs-sidebar" aria-label="Case study sections">
+          <div class="cs-sidebar-sticky">
+            <span class="cs-nav-eyebrow">On this page</span>
+            <nav class="cs-nav">
+
+              <a class="cs-nav-link active" href="#brief">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">01</span>
+                  <span class="cs-nav-name">The Brief</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#context">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">02</span>
+                  <span class="cs-nav-name">Context</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#research">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">03</span>
+                  <span class="cs-nav-name">Research</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#key-finding">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">04</span>
+                  <span class="cs-nav-name">Key Finding</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#insights">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">05</span>
+                  <span class="cs-nav-name">Insights</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#solution">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">06</span>
+                  <span class="cs-nav-name">The Solution</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#testing">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">07</span>
+                  <span class="cs-nav-name">Testing</span>
+                </span>
+              </a>
+              <a class="cs-nav-link" href="#reflection">
+                <span class="cs-pin"></span>
+                <span class="cs-nav-content">
+                  <span class="cs-nav-num">08</span>
+                  <span class="cs-nav-name">Reflection</span>
+                </span>
+              </a>
+
+            </nav>
+          </div>
         </aside>
 
 
@@ -1050,25 +1103,20 @@
 <script src="../js/main.js?v=6"></script>
 
 <script>
-/* Sidebar active link updates on scroll */
+/* Sidebar scrollspy — past / active / future */
 (function () {
-  const links = document.querySelectorAll('.cs-nav-link');
-  const sections = [];
-
-  links.forEach(function (link) {
-    const id = link.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if (el) sections.push({ id: id, el: el, link: link });
-  });
+  var ids   = ['brief','context','research','key-finding','insights','solution','testing','reflection'];
+  var links = Array.from(document.querySelectorAll('.cs-nav-link'));
+  var secs  = ids.map(function (id) { return document.getElementById(id); });
 
   function update() {
-    const scrollY = window.scrollY + 140;
-    let current = sections[0];
-    sections.forEach(function (s) {
-      if (s.el.offsetTop <= scrollY) current = s;
+    var y = window.scrollY + Math.round(window.innerHeight * 0.30);
+    var active = 0;
+    secs.forEach(function (el, i) { if (el && el.offsetTop <= y) active = i; });
+    links.forEach(function (el, i) {
+      el.classList.toggle('active', i === active);
+      el.classList.toggle('past',   i < active);
     });
-    links.forEach(function (l) { l.classList.remove('active'); });
-    if (current) current.link.classList.add('active');
   }
 
   window.addEventListener('scroll', update, { passive: true });

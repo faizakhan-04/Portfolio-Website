@@ -19,10 +19,14 @@
    Replace olive green with forest green for Nomadology
    ============================================================ */
 
-.cs-back-link:hover         { color: #4a7050; }
-.cs-nav-link:hover,
-.cs-nav-link.active         { color: #3d6045; border-left-color: #3d6045; }
-.cs-list li::before         { color: #3d6045; }
+.cs-back-link:hover              { color: #4a7050; }
+.cs-nav-link::before             { background: #3d6045; }
+.cs-nav-link.active              { background: linear-gradient(to right, rgba(61, 96, 69, 0.09), transparent 90%); }
+.cs-nav-link.past .cs-pin        { background: rgba(100, 85, 55, 0.35); }
+.cs-nav-link.active .cs-pin      { background: #3d6045; border-color: #3d6045; box-shadow: 0 0 0 3px rgba(61, 96, 69, 0.14); }
+.cs-nav-link.active .cs-nav-num  { color: #3d6045; }
+.cs-nav-link:hover:not(.active) .cs-nav-name { color: var(--ink-mid); }
+.cs-list li::before          { color: #3d6045; }
 .cs-group-block             { border-left-color: rgba(42, 63, 48, 0.35); }
 .cs-group-title             { color: #3d6045; }
 
