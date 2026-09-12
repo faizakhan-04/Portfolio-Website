@@ -54,17 +54,6 @@ notes:
 
 ---
 
-## Research statistics (stats ribbon, above case studies)
-
-18    Stakeholder Interviews
-5     NGOs Across Mumbai
-1     Service Ecosystem Explored
-
-(Figures drawn from the StraySafe research — see
-content/straysafe.md.)
-
----
-
 ## Selected case studies section
 
 Section label (margin note): "selected investigations →"

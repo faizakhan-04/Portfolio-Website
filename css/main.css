@@ -590,58 +590,6 @@ img {
 
 
 /* ============================================================
-   STATS RIBBON
-   ============================================================ */
-
-.stats-ribbon {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  padding: 28px 0;
-  border-top: 0.5px solid rgba(100, 85, 55, 0.14);
-  border-bottom: 0.5px solid rgba(100, 85, 55, 0.14);
-  margin-bottom: 72px;
-}
-
-.stat-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 0 16px;
-}
-
-.stat-item:not(:last-child) {
-  border-right: 0.5px solid rgba(100, 85, 55, 0.12);
-}
-
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1;
-  color: var(--ink);
-}
-
-.stat-label {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink-faint);
-  text-align: center;
-}
-
-.stat-divider {
-  font-size: 20px;
-  color: rgba(100, 85, 55, 0.20);
-  flex-shrink: 0;
-}
-
-
-/* ============================================================
    CASE STUDIES SECTION
    ============================================================ */
 
@@ -1109,12 +1057,6 @@ img {
   letter-spacing: 0.02em;
 }
 
-.footer-pg {
-  font-family: 'Caveat', cursive;
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--ink-faint);
-}
 
 
 /* ============================================================
@@ -1279,18 +1221,6 @@ img {
   .pb-note-pattern   { transform: rotate(1.8deg); }
   .pb-note-system    { transform: rotate(-1.6deg); }
   .pb-note-direction { transform: rotate(2.2deg); }
-
-  .stats-ribbon {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
-  }
-
-  .stat-item:not(:last-child) {
-    border-right: none;
-    border-bottom: 0.5px solid rgba(100, 85, 55, 0.12);
-    padding-bottom: 20px;
-  }
 
   .section-header {
     flex-direction: column;
