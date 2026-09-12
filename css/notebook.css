@@ -175,15 +175,6 @@
   color: #2e2a1e;
 }
 
-/* Coloured dot */
-.nb-tab-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #5a6e48;
-  flex-shrink: 0;
-}
-
 /* Vertical label */
 .nb-tab-label {
   font-family: 'Caveat', cursive;

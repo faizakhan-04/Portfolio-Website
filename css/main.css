@@ -161,16 +161,6 @@ img {
   letter-spacing: -0.01em;
 }
 
-.nav-logo-dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--olive);
-  margin-left: 1px;
-  flex-shrink: 0;
-}
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -204,15 +194,6 @@ img {
 
 .nav-link:hover::after {
   width: 100%;
-}
-
-.nav-end-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--olive);
-  margin-left: -16px;
 }
 
 

@@ -79,7 +79,8 @@
     if (!pairs.length) return;
 
     function update() {
-      const y = window.scrollY + Math.round(window.innerHeight * 0.30);
+      const viewportH = window.innerHeight || document.documentElement.clientHeight || 0;
+      const y = window.scrollY + Math.round(viewportH * 0.30);
       let activeIndex = 0;
       pairs.forEach((pair, i) => {
         if (pair.section.offsetTop <= y) activeIndex = i;
@@ -90,6 +91,11 @@
     }
 
     window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    /* Web fonts and images can shift section offsets after the first
+       paint — recheck once everything has settled in, in addition to
+       the immediate call below. */
+    window.addEventListener('load', update);
     update();
   }
 
