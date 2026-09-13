@@ -390,3 +390,50 @@
   font-weight: 400;
   color: var(--ink-faint);
 }
+
+
+/* ============================================================
+   RESPONSIVE — tablet & mobile
+   ============================================================ */
+
+@media (max-width: 860px) {
+  .about-bio-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .beyond-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .beyond-photo-col {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-headline {
+    font-size: 34px;
+  }
+
+  .about-section-heading {
+    font-size: 26px;
+  }
+
+  .about-bio-meta {
+    flex-wrap: wrap;
+    row-gap: 14px;
+  }
+
+  /* Match the reduced content padding used at this breakpoint
+     (see main.css) so the footer bleed doesn't overshoot the page. */
+  .about-footer {
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+
+  .avail-badge {
+    flex-wrap: wrap;
+  }
+}

@@ -623,3 +623,50 @@
 .cs-paper-btn.nom-btn:hover {
   background: #1e2e22;
 }
+
+
+/* ============================================================
+   RESPONSIVE — tablet & mobile
+   (straysafe.css's shared .cs-wrapper / .cs-sidebar / .cs-hero /
+   .cs-context-compare rules already cover this page too — these
+   handle the Nomadology-specific two-column components.)
+   ============================================================ */
+
+@media (max-width: 860px) {
+  .nom-insights-grid,
+  .research-methods,
+  .finding-row,
+  .journey-maps-wrap,
+  .touchpoint-cards,
+  .kit-rounds {
+    grid-template-columns: 1fr;
+  }
+
+  .finding-not {
+    border-right: 0.5px solid rgba(184, 88, 56, 0.18);
+    border-bottom: none;
+  }
+
+  .values-mismatch {
+    grid-template-columns: 1fr;
+  }
+
+  .values-col-divider {
+    width: 100%;
+    height: 28px;
+  }
+
+  .values-vs {
+    width: 1px;
+    height: 28px;
+  }
+
+  /* A 7-across timeline has no room to breathe below tablet width;
+     wrap it into rows instead of squeezing every touchpoint down
+     to a sliver — the detailed cards below still carry the full
+     descriptions. */
+  .touchpoints {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+  }
+}

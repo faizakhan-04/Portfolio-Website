@@ -1356,3 +1356,62 @@
 
 
 /* (progress-thread removed — replaced by .cs-sidebar sticky nav) */
+
+
+/* ============================================================
+   RESPONSIVE — tablet & mobile
+   ============================================================ */
+
+@media (max-width: 860px) {
+  /* Sidebar nav duplicates content reachable by scrolling and a
+     150px column has no room to breathe below tablet width — drop
+     it and let the case study run full width, same reasoning as
+     hiding the right-side rail. */
+  .cs-wrapper {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .cs-sidebar {
+    display: none;
+  }
+
+  .cs-context-compare {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 12px;
+  }
+
+  .cs-impact-split,
+  .reflection-cols,
+  .cs-artifact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-wireframe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  /* Match the reduced content padding used at this breakpoint
+     (see main.css) so the full-bleed hero panel doesn't overshoot
+     the page — its left edge and horizontal padding already track
+     var(--content-pl) reactively; only this hardcoded margin doesn't. */
+  .cs-hero {
+    margin-right: -20px;
+  }
+
+  .cs-headline {
+    font-size: 28px;
+  }
+
+  .cs-hero-bar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cs-key-insight {
+    font-size: 15px;
+  }
+}
