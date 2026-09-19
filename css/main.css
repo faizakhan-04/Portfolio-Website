@@ -649,9 +649,29 @@ button:focus-visible,
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 420px));
-  justify-content: center;
+  /* auto-fit's column count is calculated from minmax()'s MAX value
+     when that max is a definite length — a well-known gotcha. Using
+     1fr here (indefinite) makes it calculate off the 280px min
+     instead, so 3 cards actually fit a single row instead of capping
+     out at 2 and wrapping the 3rd. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
+}
+
+/* No dedicated breakpoints existed for this grid before — the old
+   2-per-row look was this same auto-fit/minmax gotcha, not an
+   intentional tablet design. Values reused from .think-grid's
+   breakpoints below for consistency. */
+@media (max-width: 860px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Case Card ── */
@@ -1023,12 +1043,37 @@ button:focus-visible,
   padding: 16px 0 18px;
 }
 
+/* Single definition for the copyright line's typography — used
+   as-is on the homepage's .footer-bar, and reused unscoped inside
+   .about-footer below, so the text renders identically everywhere
+   instead of drifting between two near-duplicate rules. */
 .footer-copy {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 11px;
+  font-weight: 300;
   color: var(--ink-faint);
   letter-spacing: 0.02em;
+}
+
+/* ── Simple footer bar — About, Contact, and the two case-study
+   pages, which don't carry the homepage's fuller 3-column footer.
+   Lives here (not about.css) so every page that uses it gets it,
+   regardless of which page-specific stylesheet it happens to load. ── */
+.about-footer {
+  background: var(--paper-warm);
+  border-top: 0.5px solid rgba(100, 85, 55, 0.12);
+  margin: 0 -52px 0 calc(-1 * var(--content-pl));
+  padding: 20px var(--content-pl) 28px calc(var(--content-pl));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-footer .footer-pg {
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-faint);
 }
 
 
@@ -1246,6 +1291,15 @@ button:focus-visible,
     gap: 6px;
     /* Clears the fixed chat-toggle button (56px, bottom:28px) sitting
        bottom-right at the end of the page. */
+    padding-bottom: 88px;
+  }
+
+  /* Same chat-toggle clearance as .footer-bar above, for the simpler
+     footer used on About, Contact, and the case-study pages. */
+  .about-footer {
+    margin-right: -20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
     padding-bottom: 88px;
   }
 }

@@ -362,34 +362,9 @@
   50%       { box-shadow: 0 0 0 7px rgba(90, 148, 80, 0); }
 }
 
-/* ============================================================
-   ABOUT FOOTER BAR
-   ============================================================ */
-
-.about-footer {
-  background: var(--paper-warm);
-  border-top: 0.5px solid rgba(100, 85, 55, 0.12);
-  margin: 0 -52px 0 calc(-1 * var(--content-pl));
-  padding: 20px var(--content-pl) 28px calc(var(--content-pl));
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.about-footer .footer-copy {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 300;
-  color: var(--ink-faint);
-  letter-spacing: 0.02em;
-}
-
-.about-footer .footer-pg {
-  font-family: 'Caveat', cursive;
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--ink-faint);
-}
+/* Footer bar styling (.about-footer, .footer-copy, .footer-pg) now
+   lives in main.css so it's available on every page that uses it,
+   not just the ones that happen to load about.css. */
 
 
 /* ============================================================
@@ -426,16 +401,7 @@
     row-gap: 14px;
   }
 
-  /* Match the reduced content padding used at this breakpoint
-     (see main.css) so the footer bleed doesn't overshoot the page.
-     Extra bottom padding clears the fixed chat-toggle button
-     (56px, bottom:28px) sitting bottom-right at the end of the page. */
-  .about-footer {
-    margin-right: -20px;
-    padding-right: 20px;
-    flex-wrap: wrap;
-    padding-bottom: 88px;
-  }
+  /* .about-footer's own mobile override now lives in main.css. */
 
   .avail-badge {
     flex-wrap: wrap;
