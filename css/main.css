@@ -746,7 +746,8 @@ button:focus-visible,
 .card-tags {
   display: flex;
   align-items: center;
-  gap: 5px;
+  flex-wrap: wrap;
+  gap: 5px 5px;
   margin-bottom: 10px;
 }
 
@@ -757,6 +758,7 @@ button:focus-visible,
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: rgba(154, 144, 128, 0.78);
+  white-space: nowrap;
 }
 
 .tag-sep {

@@ -18,7 +18,7 @@ Duration:   1 month, extended
 Role:       CX Consultant & Service Designer
 
 ## Tags
-CX Consulting / Service Blueprinting / Conversational Design
+CX Consulting / Service Blueprinting / Workflow Design
 
 ## Hero stats
 3       Customer Personas Designed
@@ -138,15 +138,14 @@ Reflection
 
 Card title:  Dubai-Based Automotive Project: Unifying a
              Fragmented Lead-to-Sales Journey
-Card tags:   CX Consulting / Service Blueprinting / Conversational Design
+Card tags:   CX Consulting / Service Blueprinting / Workflow Design
 Card desc:   A Dubai-based automotive group was replacing a manual,
              fragmented lead-management process with a unified CRM
              spanning four internal roles. I designed the service
              blueprint connecting the customer journey to that system,
              and the WhatsApp conversational flows for leads and
              customers already in the pipeline.
-Card meta:   Dubai, UAE · Service blueprint across 4 internal roles ·
-             WhatsApp flows for 3 customer personas
+Card meta:   Dubai, UAE · Service blueprint · WhatsApp flows
 
 ---
 
