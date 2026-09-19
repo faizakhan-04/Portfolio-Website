@@ -531,6 +531,17 @@
    perspective() is embedded in the transform so no parent
    change is needed (avoids containing-block issues with fixed
    children).
+
+   Two halves of one motion: the outgoing page rotates away to
+   the left (pageFlipOut, pivoting on its left edge) and the
+   incoming page rotates in from the right (pageFlipIn, pivoting
+   on its right edge) — same 0.62s duration and embedded
+   perspective(1800px) on both, so neither half reads as slower
+   or shallower than the other. Easing is mirrored rather than
+   identical on purpose: an accelerating ease-in reads right for
+   something leaving, a decelerating ease-out reads right for
+   something settling into place — using the same curve for both
+   would make the entrance feel like it overshoots and stops dead.
    ============================================================ */
 
 /* ── Keyframes ── */
@@ -540,11 +551,29 @@
   100% { transform: perspective(1800px) rotateY(-90deg); opacity: 0; }
 }
 
-/* ── Class applied by JS on navigation ── */
+@keyframes pageFlipIn {
+  0%   { transform: perspective(1800px) rotateY(90deg); opacity: 0; }
+  100% { transform: perspective(1800px) rotateY(0deg);  opacity: 1; }
+}
+
+/* ── Classes applied by JS on navigation ── */
 
 .page-flip-out {
   animation: pageFlipOut 0.62s cubic-bezier(0.4, 0, 1, 1) forwards;
   transform-origin: left center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Applied to the freshly-loaded page so arriving feels like the
+   other half of the same flip instead of an instant snap-in. */
+.page-flip-in {
+  animation: pageFlipIn 0.62s cubic-bezier(0, 0, 0.2, 1) forwards;
+  transform-origin: right center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   pointer-events: none;
   will-change: transform, opacity;
 }
@@ -577,6 +606,11 @@
   @keyframes pageFlipOut {
     0%   { opacity: 1; transform: none; }
     100% { opacity: 0; transform: none; }
+  }
+
+  @keyframes pageFlipIn {
+    0%   { opacity: 0; transform: none; }
+    100% { opacity: 1; transform: none; }
   }
 
   .page-flip-shadow { display: none; }

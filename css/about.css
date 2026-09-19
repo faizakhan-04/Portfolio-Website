@@ -427,10 +427,14 @@
   }
 
   /* Match the reduced content padding used at this breakpoint
-     (see main.css) so the footer bleed doesn't overshoot the page. */
+     (see main.css) so the footer bleed doesn't overshoot the page.
+     Extra bottom padding clears the fixed chat-toggle button
+     (56px, bottom:28px) sitting bottom-right at the end of the page. */
   .about-footer {
     margin-right: -20px;
     padding-right: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 88px;
   }
 
   .avail-badge {

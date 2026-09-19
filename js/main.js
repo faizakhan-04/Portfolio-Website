@@ -166,6 +166,31 @@
 
   var flipBusy = false;
 
+  /* Mirrors the outgoing flip so arriving at a page feels like the
+     other half of the same motion instead of an instant snap-in.
+     .page-flip-in is baked into the markup on <main class="page">
+     rather than added here — adding it only after this script runs
+     would let the browser paint one frame in the resting state first,
+     then jump to the animation's 0% (rotated/transparent) state, a
+     flash worse than the snap this is meant to fix. The CSS animation
+     itself needs no JS to run or finish (opacity/transform settle at
+     their 100% values via `forwards` either way); this just strips
+     the class afterward so will-change doesn't linger. Runs on every
+     load rather than only when the referrer is an internal page:
+     a plain multi-page site has no shared render tree to carry an
+     "I just navigated" flag across the document boundary, and a full
+     reload / typed URL should look identical to a click-through. */
+  function initPageFlipIn() {
+    var page = document.querySelector('.page');
+    if (!page || !page.classList.contains('page-flip-in')) return;
+
+    var DURATION = reducedMotion() ? 350 : 620;
+
+    setTimeout(function () {
+      page.classList.remove('page-flip-in');
+    }, DURATION);
+  }
+
   function initPageFlip() {
     /* Gracefully skip if 3D transforms are unsupported */
     if (!supports3D()) return;
@@ -225,6 +250,7 @@
     initRailScrollspy();
     initNavbarShadow();
     initHeroEntry();
+    initPageFlipIn();
     initPageFlip();
   }
 
