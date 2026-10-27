@@ -1152,26 +1152,23 @@
   margin-bottom: 12px;
 }
 
-.cs-wireframe-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+.cs-mockup-link {
+  display: block;
   margin: 20px 0 10px;
 }
 
-.cs-wireframe-placeholder {
-  background: var(--paper-warm);
-  border: 0.5px solid rgba(100, 85, 55, 0.18);
-  aspect-ratio: 3 / 4;
-  display: flex;
-  align-items: flex-end;
-  padding: 8px;
+.cs-mockup-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: var(--sh-m);
+  transition: opacity 0.2s ease;
 }
 
-.cs-wireframe-label {
-  font-family: 'Caveat', cursive;
-  font-size: 11px;
-  color: var(--ink-faint);
+.cs-mockup-link:hover .cs-mockup-img {
+  opacity: 0.88;
 }
 
 .cs-next-project {
@@ -1388,9 +1385,6 @@
     grid-template-columns: 1fr;
   }
 
-  .cs-wireframe-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 700px) {
